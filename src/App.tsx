@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useRef } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+
+    const handleWheel = (event) => {
+      event.preventDefault();
+
+      const delta = event.deltaY;
+      const scrollAmount = delta > 0 ? window.innerHeight : -window.innerHeight;
+      const scrollToPosition = container.scrollTop + scrollAmount;
+
+      container.scrollTo({
+        top: scrollToPosition,
+        behavior: "smooth",
+      });
+    };
+
+    container.addEventListener("wheel", handleWheel);
+
+    return () => {
+      container.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="section-container" ref={containerRef}>
+      <section>HOME</section>
+      <section>ABOUT</section>
+      <section>PORTFOLIO</section>
+      <section>CONTACT</section>
+    </div>
+  );
 }
 
-export default App
+export default App;
