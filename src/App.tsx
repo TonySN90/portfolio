@@ -1,4 +1,7 @@
 import { useEffect, useRef } from "react";
+import "./App.css";
+import Home from "./Hero/components/Home";
+import Tile from "./components/Tile";
 
 function App() {
   const containerRef = useRef(null);
@@ -27,12 +30,19 @@ function App() {
   }, []);
 
   return (
-    <div className="section-container" ref={containerRef}>
-      <section>HOME</section>
-      <section>ABOUT</section>
-      <section>PORTFOLIO</section>
-      <section>CONTACT</section>
-    </div>
+    <>
+      <div className="section-container" ref={containerRef}>
+        <div className="hero-background">
+          {Array.from(Array(20 * 12), (i) => (
+            <Tile key={i} />
+          ))}
+        </div>
+        <Home />
+        <section>ABOUT</section>
+        <section>PROJECTS</section>
+        <section>CONTACT</section>
+      </div>
+    </>
   );
 }
 
