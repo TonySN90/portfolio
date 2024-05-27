@@ -3,7 +3,7 @@ function NavBar() {
 
   return (
     <>
-      <div className="fixed flex flex-col justify-center gap-3 w-[4rem] z-30 h-full pt-10 border-color_primary">
+      <div className="fixed flex flex-col justify-center gap-3 w-[4rem] z-30 h-full pt-10 ">
         {vavEntries.map((name) => (
           <NavEntry key={name} name={name} />
         ))}
