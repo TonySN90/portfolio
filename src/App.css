@@ -16,13 +16,3 @@ section {
   height: 100vh;
   scroll-behavior: smooth;
 }
-
-.hero-background {
-  position: fixed;
-  display: grid;
-  height: 100vh;
-  background-color: var(--color-background);
-  z-index: 1;
-  grid-template-columns: repeat(20, 1fr);
-  overflow-y: clip;
-}

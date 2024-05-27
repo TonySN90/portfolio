@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
 import "./App.css";
 import Home from "./Hero/components/Home";
-import Tile from "./components/Tile";
+import TileGrid from "./components/Tile";
+import RadialBackground from "./components/RadialBackground";
+import NavBar from "./components/NavBar";
 
 function App() {
   const containerRef = useRef(null);
@@ -30,19 +32,22 @@ function App() {
   }, []);
 
   return (
-    <>
-      <div className="section-container" ref={containerRef}>
-        <div className="hero-background">
-          {Array.from(Array(20 * 12), (i) => (
-            <Tile key={i} />
-          ))}
-        </div>
+    <main>
+      <div
+        className="w-full relative h-screen overflow-hidden"
+        ref={containerRef}
+      >
+        <TileGrid />
+        <RadialBackground />
+        <NavBar />
         <Home />
-        <section>ABOUT</section>
-        <section>PROJECTS</section>
-        <section>CONTACT</section>
+        <section id="über">
+          <p style={{ zIndex: 1000 }}>ABOUT</p>
+        </section>
+        <section id="proj">PROJECTS</section>
+        <section id="kont">CONTACT</section>
       </div>
-    </>
+    </main>
   );
 }
 
