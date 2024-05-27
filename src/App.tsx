@@ -4,6 +4,7 @@ import Home from "./Hero/components/Home";
 import TileGrid from "./components/Tile";
 import RadialBackground from "./components/RadialBackground";
 import NavBar from "./components/NavBar";
+import Logo from "./components/Logo";
 
 function App() {
   const containerRef = useRef(null);
@@ -11,7 +12,7 @@ function App() {
   useEffect(() => {
     const container = containerRef.current;
 
-    const handleWheel = (event) => {
+    const handleWheel = (event: WheelEvent) => {
       event.preventDefault();
 
       const delta = event.deltaY;
@@ -39,13 +40,26 @@ function App() {
       >
         <TileGrid />
         <RadialBackground />
+        <Logo />
         <NavBar />
         <Home />
         <section id="über">
-          <p style={{ zIndex: 1000 }}>ABOUT</p>
+          <p className="text-3xl" style={{ zIndex: 1000 }}>
+            ABOUT
+          </p>
         </section>
-        <section id="proj">PROJECTS</section>
-        <section id="kont">CONTACT</section>
+        <section id="proj">
+          {" "}
+          <p className="text-3xl" style={{ zIndex: 1000 }}>
+            Projekte
+          </p>
+        </section>
+        <section id="kont">
+          {" "}
+          <p className="text-3xl" style={{ zIndex: 1000 }}>
+            Kontakt
+          </p>
+        </section>
       </div>
     </main>
   );
