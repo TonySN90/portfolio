@@ -1,13 +1,18 @@
+import { motion } from "framer-motion";
+
 function NavBar() {
   const vavEntries = ["start", "über", "proj", "kont"];
 
   return (
     <>
-      <div className="fixed flex flex-col justify-center gap-3 w-[4rem] z-30 h-full pt-10 ">
+      <motion.div
+        animate={{ left: 0, transition: { duration: 1, ease: "easeInOut" } }}
+        className="fixed left-[-4rem] flex flex-col justify-center gap-3 w-[4rem] bg-color_background z-30 h-full pt-10 "
+      >
         {vavEntries.map((name) => (
           <NavEntry key={name} name={name} />
         ))}
-      </div>
+      </motion.div>
     </>
   );
 }

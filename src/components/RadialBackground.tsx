@@ -31,7 +31,7 @@ function RadialBackground() {
         pointerEvents: "none",
         backgroundColor: "transparent",
         backgroundImage:
-          "radial-gradient(circle at var(--pos-1) var(--pos-2), #FFFF0000 50%, #0aff9d19 100%, #EE82EE00 var(--pos-3))",
+          "radial-gradient(circle at var(--pos-1) var(--pos-2), #FFFF0000 50%, var(--color-radial-background) 100%, #EE82EE00 var(--pos-3))",
       }}
       animate={controls}
       className="fixed h-screen w-screen z-20"

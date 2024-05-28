@@ -4,8 +4,11 @@
 
 :root {
   --color-primary: #0aff9d;
-  --color-primary-dark: #0aff9d63;
+  --color-primary-dark: #0aff9d0a;
+  --color-secondary: #ff1a0a;
+  --color-secondary-dark: #ff1a0a0a;
   --color-background: #181818;
+  --color-radial-background: #0aff9d19;
   --color-border-grid: #1e1e1e;
 
   --pos-1: 0%
@@ -17,10 +20,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #fff;
+  color: #ffffffe5;
   background-color: var(--color-background);
   font-family: "Exo 2", sans-serif;
   font-optical-sizing: auto;
-
   scroll-behavior: smooth;
 }
