@@ -32,7 +32,7 @@ function Hero() {
       </p>
       <button
         className="w-[9rem] py-[.8rem] px-[1rem] rounded-md z-20 bg-rose-600 text-color_background
-           hover:text-white hover:bg-color_background hover:outline-rose-600 outline"
+           hover:text-white hover:bg-color_background outline outline-rose-600 transition-colors shadow-md shadow-red-600"
       >
         Kontakt
       </button>

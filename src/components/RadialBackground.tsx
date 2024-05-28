@@ -1,7 +1,6 @@
 import { motion, useAnimation, Target } from "framer-motion";
 import { useEffect } from "react";
 
-// Define a custom type that extends Target to include the custom CSS properties
 interface CustomTarget extends Target {
   "--pos-1"?: string[];
   "--pos-2"?: string[];
