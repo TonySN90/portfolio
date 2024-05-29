@@ -22,7 +22,10 @@ function TileGrid() {
   }, [numTiles]);
 
   return (
-    <section className="fixed w-[2100px] h-screen grid grid-cols-20 overflow-hidden z-20">
+    <section
+      style={{ pointerEvents: "none", backgroundColor: "transparent" }}
+      className="fixed w-[2100px] h-screen grid grid-cols-20 z-20"
+    >
       {Array.from({ length: numTiles }, (_, i) => (
         <Tile key={i} isTriggered={triggeredTiles.includes(i)} />
       ))}
@@ -37,7 +40,7 @@ const Tile = ({ isTriggered }: { isTriggered: boolean }) => {
     <motion.div
       className="aspect-square border border-color_border_grid transition-all duration-1000 ease-out"
       whileHover={{
-        zIndex: 1,
+        // zIndex: 1,
         backgroundColor: "var(--color-primary)",
         border: "1px solid var(--color-primary-dark)",
       }}

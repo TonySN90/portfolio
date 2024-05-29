@@ -1,7 +1,7 @@
 function Astronaut() {
   return (
     <div
-      className="absolute left-[65%] bottom-[1px] z-20"
+      className="absolute left-[-40px] sm:left-[65%] bottom-[1px] z-20 animate-pulse animation-delay-1000"
       style={{ pointerEvents: "none", backgroundColor: "transparent" }}
     >
       <svg
