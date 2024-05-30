@@ -82,7 +82,7 @@ function App() {
 
   return (
     <main
-      className="w-full relative h-screen overflow-hidden"
+      className="w-full relative h-screen bg-transparent "
       // ref={containerRef}
     >
       <TileGrid />

@@ -3,10 +3,10 @@ import { FaChevronDown } from "react-icons/fa";
 
 function Hero() {
   return (
-    <div className="z-30 bg-transparent  bg-red-50">
+    <div className="z-30 bg-transparent bg-red-50 uppercase">
       <motion.h1
         style={{ backgroundColor: "transparent", pointerEvents: "none" }}
-        className="font-bold text-[2rem] sm:text-[6vw] z-30 p-0 opacity-0"
+        className="font-bold text-[2.6rem] sm:text-[6vw] z-30 p-0 opacity-"
         animate={{
           opacity: 1,
           transition: { duration: 1.5, ease: "easeInOut" },
@@ -30,8 +30,7 @@ function Hero() {
         style={{ backgroundColor: "transparent", pointerEvents: "none" }}
         className=" my-4 z-30"
       >
-        Wer immer tut, was er schon kann, bleibt immer das, was er schon ist
-        (Ford) ...
+        {"<Willkommen />"}
       </p>
       <div className="w-full flex justify-end sm:justify-center pr-16 sm:p-0 mt-10 bg-transparent">
         <a

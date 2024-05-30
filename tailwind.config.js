@@ -2,6 +2,15 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    container: {
+      position: "relative",
+      height: "50vh",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      scrollSnapAlign: "start",
+      textAlign: "right",
+    },
     extend: {
       gridTemplateColumns: {
         20: "repeat(25, minmax(0, 1fr))",

@@ -23,6 +23,6 @@
   color: #ffffffe5;
   background-color: var(--color-background);
   font-family: "Exo 2", sans-serif;
-  font-optical-sizing: auto;
+  /* font-optical-sizing: auto; */
   scroll-behavior: smooth;
 }

@@ -22,10 +22,7 @@ function TileGrid() {
   }, [numTiles]);
 
   return (
-    <section
-      style={{ pointerEvents: "none", backgroundColor: "transparent" }}
-      className="fixed w-[2100px] h-screen grid grid-cols-20 z-20"
-    >
+    <section className="fixed w-[2100px] h-screen grid grid-cols-20 z-20">
       {Array.from({ length: numTiles }, (_, i) => (
         <Tile key={i} isTriggered={triggeredTiles.includes(i)} />
       ))}
