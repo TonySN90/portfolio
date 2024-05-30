@@ -1,6 +1,7 @@
 import { FaCode } from "react-icons/fa";
 import SectionWrapper from "../components/SectionWrapper";
 import Title from "../components/Title";
+import SubTitle from "../components/SubTitle";
 
 function About() {
   return (
@@ -29,12 +30,12 @@ function About() {
             </p>
           </div>
           <div className="w-full md:w-[40%] z-30 bg-transparent">
-            <div className="font-bold text-[1.2rem] flex items-center gap-2 bg-transparent mb-2">
-              <FaCode className="bg-transparent" />
+            <SubTitle>
+              <FaCode className="bg-transparent text-color_primary size-6" />
               <span className="bg-transparent">
                 Tech Stack // Erfahrungen mit...
               </span>
-            </div>
+            </SubTitle>
             <div className="flex flex-wrap gap-2 bg-transparent">
               <Chip>Javascript</Chip>
               <Chip>Typescript</Chip>
@@ -45,6 +46,7 @@ function About() {
               <Chip>Tailwind</Chip>
               <Chip>Github</Chip>
               <Chip>Vite</Chip>
+              <Chip>Supabase</Chip>
             </div>
           </div>
         </div>

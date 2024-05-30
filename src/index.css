@@ -20,9 +20,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #ffffffe5;
+  /* color: #ffffffe5; */
   background-color: var(--color-background);
   font-family: "Exo 2", sans-serif;
-  /* font-optical-sizing: auto; */
   scroll-behavior: smooth;
+}
+h1, h2, h3, h4, h5, h6, span, p, svg {
+  color: #ffffffe5;
 }
