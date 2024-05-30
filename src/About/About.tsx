@@ -7,7 +7,7 @@ function About() {
   return (
     <section
       className="relative flex justify-center items-center py-16
-    snap-start text-right sm:text-left w-[calc(100vw-3rem)] sm:w-[calc(100vw-4rem)]"
+    snap-start sm:text-left w-[calc(100vw-3rem)] sm:w-[calc(100vw-4rem)]"
       id="über"
     >
       <SectionWrapper>
@@ -31,7 +31,9 @@ function About() {
           </div>
           <div className="w-full md:w-[40%] z-30 bg-transparent">
             <SubTitle>
-              <FaCode className="bg-transparent text-color_primary size-6" />
+              <div className="bg-color_primary min-w-8 size-8 flex justify-center items-center rounded-full">
+                <FaCode className="bg-transparent text-color_background size-4" />
+              </div>
               <span className="bg-transparent">
                 Tech Stack // Erfahrungen mit...
               </span>

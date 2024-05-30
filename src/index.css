@@ -10,6 +10,15 @@
   --color-background: #181818;
   --color-radial-background: #0aff9d19;
   --color-border-grid: #1e1e1e;
+  --color-card-background: #1f1f1f;
+
+  --fontSize-sm: 0.8rem;
+  --fontSize-md: 1rem;
+  --fontSize-lg: 1.2rem;
+  --fontSize-xl: 1.4rem;
+  --fontSize-xxl: 1.6rem;
+  --fontSize-xxxl: 1.8rem;
+  --fontSize-xxxxl: 2rem;
 
   --pos-1: 0%
   --pos-2: 59%
@@ -25,6 +34,7 @@
   font-family: "Exo 2", sans-serif;
   scroll-behavior: smooth;
 }
-h1, h2, h3, h4, h5, h6, span, p, svg {
+h1, h2, h3, h4, h5, h6, span, p, svg, a {
   color: #ffffffe5;
+  background-color: transparent
 }

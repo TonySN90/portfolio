@@ -1,16 +1,23 @@
 function Title({
   children,
   reverse,
+  size,
 }: {
   children: React.ReactNode;
   reverse?: boolean;
+  size?: number;
 }) {
   return (
     <div
-      style={{ flexDirection: reverse ? "row-reverse" : "row" }}
-      className="flex w-full items-center gap-6"
+      style={{
+        flexDirection: reverse ? "row-reverse" : "row",
+      }}
+      className="flex w-full items-center gap-6 bg-transparent"
     >
-      <h2 className="flex text-[2.4rem] sm:text-[3rem] font-bold z-30 bg-transparent mb-2">
+      <h2
+        style={{ fontSize: `${size}rem` }}
+        className="flex text-[2.4rem] sm:text-[3rem] font-bold z-30 bg-transparent"
+      >
         {children}
         <span className="text-color_primary bg-transparent">.</span>
       </h2>
