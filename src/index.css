@@ -4,7 +4,7 @@
 
 :root {
   --color-primary: #0aff9d;
-  --color-primary-dark: #0aff9d0a;
+  --color-primary-dark: #0aff9d31;
   --color-secondary: #ff1a0a;
   --color-secondary-dark: #ff1a0a0a;
   --color-background: #181818;
@@ -38,3 +38,27 @@ h1, h2, h3, h4, h5, h6, span, p, svg, a {
   color: #ffffffe5;
   background-color: transparent
 }
+
+article {
+  color: #ffffffe5;
+  background-color: transparent
+}
+
+.styles-module_scrollContainer__-bJC8  {
+  background-color: transparent;
+  scrollbar-color: var(--color-primary-dark) #1f1f1f;
+}
+
+.styles-module_footer__ZQ-Bl{
+  background-color: transparent;
+}
+
+.react-activity-calendar__count {
+  color: #ffffffe5;
+  background-color: transparent
+}
+
+.styles-module_legendColors__kFY2e {
+  background-color: transparent
+}
+

@@ -3,8 +3,19 @@ import SectionWrapper from "../components/SectionWrapper";
 import Title from "../components/Title";
 import SubTitle from "../components/SubTitle";
 import { LuGithub } from "react-icons/lu";
+// import useContributions from "./useContributions";
+import GitHubCalendar from "react-github-calendar";
+// import { ThemeInput } from "react-activity-calendar";
 
 function About() {
+  // const { data, loading } = useContributions();
+  // console.log(data);
+
+  const explicitTheme = {
+    light: ["#f0f0f0", "#c4edde", "#7ac7c4", "#f73859", "#384259"],
+    dark: ["#0aff9d18", "#0aff9d47", "#0aff9d85", "#0aff9dba", "#0aff9d"],
+  };
+
   return (
     <section
       className="relative flex justify-center items-center py-16
@@ -13,7 +24,7 @@ function About() {
     >
       <SectionWrapper>
         <Title>WerBinIch</Title>
-        <div className="z-30 bg-transparent flex flex-col sm:flex-row gap-6 mb-4">
+        <div className="z-30 bg-transparent flex flex-col sm:flex-row gap-6 mb-6">
           <div className="z-30 flex flex-col gap-2 w-full md:w-[60%] uppercase bg-transparent pointer-events-none text-left">
             <p className="bg-transparent">
               Geboren in Bergen und aufgewachsen auf Rügen. Inzwischen
@@ -51,23 +62,29 @@ function About() {
             </div>
           </div>
         </div>
-        <div className="z-30 bg-transparent w-[100%]">
+        <div className="z-30 bg-transparent rounded-lg p-3 w-[100%] border border-color_primary_dark">
           <SubTitle>
             <div className="bg-color_primary min-w-8 size-8 flex justify-center items-center rounded-full">
               <LuGithub className="bg-transparent text-color_background size-5" />
             </div>
             <p className="bg-transparent">Contributions</p>
           </SubTitle>
-          <a
-            className="z-30 bg-transparent p-4 rounded-lg"
-            href="https://github.com/TonySN90"
-          >
-            <img
-              className="w-full"
-              src="https://ghchart.rshah.org/TonySN90"
-              alt="GitHub Contributions"
+
+          <div className="bg-transparent ">
+            <GitHubCalendar
+              //
+              theme={explicitTheme}
+              style={{
+                color: "white",
+                width: "100%",
+                overflow: "hidden",
+              }}
+              // loading={loading}
+              blockRadius={5}
+              blockMargin={4.55}
+              username="TonySN90"
             />
-          </a>
+          </div>
         </div>
       </SectionWrapper>
     </section>
