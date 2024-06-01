@@ -47,6 +47,12 @@ article {
 .styles-module_scrollContainer__-bJC8  {
   background-color: transparent;
   scrollbar-color: var(--color-primary-dark) #1f1f1f;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
 }
 
 .styles-module_footer__ZQ-Bl{

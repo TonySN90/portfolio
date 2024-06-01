@@ -3,18 +3,26 @@ import SectionWrapper from "../components/SectionWrapper";
 import Title from "../components/Title";
 import SubTitle from "../components/SubTitle";
 import { LuGithub } from "react-icons/lu";
-// import useContributions from "./useContributions";
 import GitHubCalendar from "react-github-calendar";
-// import { ThemeInput } from "react-activity-calendar";
+import { ThemeInput } from "react-activity-calendar";
+import { useEffect } from "react";
 
 function About() {
-  // const { data, loading } = useContributions();
-  // console.log(data);
-
-  const explicitTheme = {
-    light: ["#f0f0f0", "#c4edde", "#7ac7c4", "#f73859", "#384259"],
+  const explicitTheme: ThemeInput = {
     dark: ["#0aff9d18", "#0aff9d47", "#0aff9d85", "#0aff9dba", "#0aff9d"],
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      // UseRef unfortunately not usable
+      const scrollContainer = document.querySelector(
+        ".styles-module_scrollContainer__-bJC8"
+      );
+      if (!scrollContainer) return;
+      scrollContainer.scrollLeft =
+        scrollContainer.scrollWidth - scrollContainer.clientWidth;
+    }, 300);
+  }, []);
 
   return (
     <section
@@ -70,18 +78,18 @@ function About() {
             <p className="bg-transparent">Contributions</p>
           </SubTitle>
 
-          <div className="bg-transparent ">
+          <div className="bg-transparent">
             <GitHubCalendar
-              //
+              // @ts-expect-error next-line theme is not typed
               theme={explicitTheme}
               style={{
                 color: "white",
                 width: "100%",
                 overflow: "hidden",
               }}
-              // loading={loading}
-              blockRadius={5}
-              blockMargin={4.55}
+              blockSize={13.5}
+              blockRadius={7}
+              blockMargin={3}
               username="TonySN90"
             />
           </div>
