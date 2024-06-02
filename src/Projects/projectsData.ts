@@ -13,7 +13,23 @@ const projectsData = [
     descriptionShort:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. A quas illo animi quis similique veritatis sed, eos, natus consequatur",
     github: "https://github.com/TonySN90/traveltrack",
-    img: "IS-Dashboard.png",
+    img: "TT.png",
+  },
+  {
+    name: "WetterApp",
+    techStack: "JS",
+    descriptionShort:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. A quas illo animi quis similique veritatis sed, eos, natus consequatur",
+    github: "https://github.com/TonySN90/weather-app",
+    img: "WA.png",
+  },
+  {
+    name: "Ferienwohnung",
+    techStack: "JS",
+    descriptionShort:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. A quas illo animi quis similique veritatis sed, eos, natus consequatur",
+    github: "https://github.com/TonySN90/weather-app",
+    img: "FEWO.png",
   },
 ];
 
