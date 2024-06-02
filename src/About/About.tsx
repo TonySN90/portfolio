@@ -21,7 +21,7 @@ function About() {
       if (!scrollContainer) return;
       scrollContainer.scrollLeft =
         scrollContainer.scrollWidth - scrollContainer.clientWidth;
-    }, 300);
+    }, 600);
   }, []);
 
   return (
