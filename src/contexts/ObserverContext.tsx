@@ -1,22 +1,34 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const ObserverContext = createContext({});
 
 function ObserverProvider({ children }: { children: React.ReactNode }) {
   const [inView, setInView] = useState("start");
+  const [isMobile, setIsMobile] = useState(false);
 
-  function handleViewChange({ ref }) {
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Check on mount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  function handleViewChange({
+    ref,
+    threshold = 0.6,
+  }: {
+    ref: React.RefObject<HTMLElement>;
+    threshold?: number;
+  }) {
     const options = {
       root: null, // viewport
-      rootMargin: "0px",
-      threshold: 1, // trigger when 10% of the element is visible
+      threshold: isMobile ? threshold : 0.6, // trigger when 60% of the element is visible
     };
-    const handleIntersection = (entries) => {
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          console.log(`${entry.target.id} is in view`);
-          setInView(entry.target.id);
-        }
+        if (entry.isIntersecting) setInView(entry.target.id);
       });
     };
 

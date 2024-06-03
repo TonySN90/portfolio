@@ -12,7 +12,7 @@ function Projects() {
   const projectsRef = useRef(null);
 
   useEffect(() => {
-    handleViewChange({ ref: projectsRef });
+    handleViewChange({ ref: projectsRef, threshold: 0.3 });
   });
 
   return (
@@ -35,12 +35,6 @@ function Projects() {
           </SubTitle>
 
           <div className="flex flex-wrap gap-4 justify-between z-30 bg-transparent">
-            {/* <Project
-              name="InnovaStay"
-              techStack="JS - React - Typescript - Redux - Tailwind"
-              description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. A quas illo animi quis similique veritatis sed, eos, natus consequatur"
-            /> */}
-
             {projectsData.map((project) => (
               <Project
                 key={project.name}
