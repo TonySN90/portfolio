@@ -8,21 +8,24 @@ import LinkIcons from "./components/LinkIcons";
 import About from "./About/About";
 import Projects from "./Projects/Projects";
 import Contact from "./Contact/Contact";
+import { ObserverProvider } from "./contexts/ObserverContext";
 
 function App() {
   return (
-    <main className="w-full relative h-screen bg-transparent">
-      <LinkIcons />
-      <TileGrid />
-      <RadialBackground />
-      <Logo />
-      <NavBar />
+    <ObserverProvider>
+      <main className="w-full relative h-screen bg-transparent">
+        <LinkIcons />
+        <TileGrid />
+        <RadialBackground />
+        <Logo />
+        <NavBar />
 
-      <Home />
-      <About />
-      <Projects />
-      <Contact />
-    </main>
+        <Home />
+        <About />
+        <Projects />
+        <Contact />
+      </main>
+    </ObserverProvider>
   );
 }
 

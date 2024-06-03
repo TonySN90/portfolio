@@ -5,12 +5,20 @@ import SubTitle from "../components/SubTitle";
 import { LuGithub } from "react-icons/lu";
 import GitHubCalendar from "react-github-calendar";
 import { ThemeInput } from "react-activity-calendar";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { useObserver } from "../contexts/ObserverContext";
 
 function About() {
   const explicitTheme: ThemeInput = {
     dark: ["#0aff9d18", "#0aff9d47", "#0aff9d85", "#0aff9dba", "#0aff9d"],
   };
+
+  const { handleViewChange } = useObserver();
+  const aboutRef = useRef(null);
+
+  useEffect(() => {
+    handleViewChange({ ref: aboutRef });
+  });
 
   useEffect(() => {
     setTimeout(() => {
@@ -26,9 +34,10 @@ function About() {
 
   return (
     <section
+      ref={aboutRef}
       className="relative flex justify-center items-center py-16
     snap-start sm:text-left w-[calc(100vw-3rem)] sm:w-[calc(100vw-4rem)]"
-      id="über"
+      id="wer"
     >
       <SectionWrapper>
         <Title>WerBinIch</Title>

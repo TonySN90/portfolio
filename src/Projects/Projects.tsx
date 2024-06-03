@@ -4,10 +4,20 @@ import SubTitle from "../components/SubTitle";
 import Title from "../components/Title";
 import Project from "./Project";
 import projectsData from "./projectsData";
+import { useEffect, useRef } from "react";
+import { useObserver } from "../contexts/ObserverContext";
 
 function Projects() {
+  const { handleViewChange } = useObserver();
+  const projectsRef = useRef(null);
+
+  useEffect(() => {
+    handleViewChange({ ref: projectsRef });
+  });
+
   return (
     <section
+      ref={projectsRef}
       id="proj"
       className="relative flex justify-center items-center py-16
     snap-start text-right sm:text-left w-[calc(100vw-3rem)] sm:w-[calc(100vw-4rem)]"

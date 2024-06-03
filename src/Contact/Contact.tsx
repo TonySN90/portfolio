@@ -3,10 +3,19 @@ import SectionWrapper from "../components/SectionWrapper";
 import Title from "../components/Title";
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
+import { useObserver } from "../contexts/ObserverContext";
+import { useEffect, useRef } from "react";
 
 function Contact() {
+  const { handleViewChange } = useObserver();
+  const contactRef = useRef(null);
+
+  useEffect(() => {
+    handleViewChange({ ref: contactRef });
+  });
   return (
     <section
+      ref={contactRef}
       id="kont"
       className="relative h-[50vh] flex justify-center items-center py-16
     snap-start text-center w-[calc(100vw-3rem)] sm:w-[calc(100vw-4rem)]"

@@ -5,13 +5,13 @@ function Project({
   techStack,
   description,
   img,
-  github,
-}: {
+}: //   github,
+{
   name: string;
   techStack: string;
   description: string;
   img: string;
-  github: string;
+  //   github: string;
 }) {
   return (
     <div className="w-full sm:w-[48%] bg-transparent transition-all p-4 border border-color_primary_dark rounded-lg">
