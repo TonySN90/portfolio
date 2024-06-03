@@ -9,6 +9,7 @@ import About from "./About/About";
 import Projects from "./Projects/Projects";
 import Contact from "./Contact/Contact";
 import { ObserverProvider } from "./contexts/ObserverContext";
+import ProjectModal from "./Projects/ProjectModal";
 
 function App() {
   return (
@@ -19,11 +20,12 @@ function App() {
         <RadialBackground />
         <Logo />
         <NavBar />
-
         <Home />
         <About />
         <Projects />
         <Contact />
+        // @ts-expect-error next-line theme is not typed
+        <ProjectModal projektName="InnovaStay" />
       </main>
     </ObserverProvider>
   );

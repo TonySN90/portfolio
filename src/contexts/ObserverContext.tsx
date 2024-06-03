@@ -3,6 +3,8 @@ import { createContext, useContext, useEffect, useState } from "react";
 interface ObserverContextType {
   inView: string;
   handleViewChange: ({ ref }: { ref: React.RefObject<HTMLElement> }) => void;
+  modalOpen: boolean;
+  setModalOpen: (open: boolean) => void;
 }
 
 const ObserverContext = createContext<ObserverContextType | undefined>(
@@ -12,6 +14,7 @@ const ObserverContext = createContext<ObserverContextType | undefined>(
 function ObserverProvider({ children }: { children: React.ReactNode }) {
   const [inView, setInView] = useState("start");
   const [isMobile, setIsMobile] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,7 +41,9 @@ function ObserverProvider({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <ObserverContext.Provider value={{ inView, handleViewChange }}>
+    <ObserverContext.Provider
+      value={{ inView, handleViewChange, modalOpen, setModalOpen }}
+    >
       {children}
     </ObserverContext.Provider>
   );

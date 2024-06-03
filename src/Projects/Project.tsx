@@ -1,4 +1,5 @@
 import Title from "../components/Title";
+import { useObserver } from "../contexts/ObserverContext";
 
 function Project({
   name,
@@ -13,6 +14,8 @@ function Project({
   img: string;
   //   github: string;
 }) {
+  const { setModalOpen } = useObserver();
+
   return (
     <div className="w-full sm:w-[48%] bg-transparent transition-all p-4 border border-color_primary_dark rounded-lg">
       <div className="bg-red-200 w-full max-h-64 rounded-lg mb-3 overflow-hidden">
@@ -25,9 +28,12 @@ function Project({
         <Title size={1.2}>{name}</Title>
         <p className="text-color_primary my-2">{techStack}</p>
         <p className="mb-2">{description}</p>
-        <a className="text-color_primary" href="#">
+        <p
+          className="text-color_primary cursor-pointer"
+          onClick={() => setModalOpen(true)}
+        >
           Erfahre mehr &#62;
-        </a>
+        </p>
       </div>
     </div>
   );
