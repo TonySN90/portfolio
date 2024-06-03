@@ -12,7 +12,7 @@ function Projects() {
   const projectsRef = useRef(null);
 
   useEffect(() => {
-    handleViewChange({ ref: projectsRef, threshold: 0.3 });
+    handleViewChange({ ref: projectsRef });
   });
 
   return (
@@ -41,7 +41,7 @@ function Projects() {
                 name={project.name}
                 techStack={project.techStack}
                 description={project.descriptionShort}
-                github={project.github}
+                // github={project.github}
                 img={project.img}
               />
             ))}

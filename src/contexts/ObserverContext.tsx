@@ -1,6 +1,13 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-const ObserverContext = createContext({});
+interface ObserverContextType {
+  inView: string;
+  handleViewChange: ({ ref }: { ref: React.RefObject<HTMLElement> }) => void;
+}
+
+const ObserverContext = createContext<ObserverContextType | undefined>(
+  undefined
+);
 
 function ObserverProvider({ children }: { children: React.ReactNode }) {
   const [inView, setInView] = useState("start");
@@ -15,16 +22,10 @@ function ObserverProvider({ children }: { children: React.ReactNode }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  function handleViewChange({
-    ref,
-    threshold = 0.6,
-  }: {
-    ref: React.RefObject<HTMLElement>;
-    threshold?: number;
-  }) {
+  function handleViewChange({ ref }: { ref: React.RefObject<HTMLElement> }) {
     const options = {
       root: null, // viewport
-      threshold: isMobile ? threshold : 0.6, // trigger when 60% of the element is visible
+      threshold: isMobile ? 0.3 : 0.6, // trigger when 60% (desktop) or 30% (mobile) of the element is visible
     };
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {

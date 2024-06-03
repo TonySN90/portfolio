@@ -33,7 +33,7 @@ function NavEntry({ name, active }: { name: string; active: boolean }) {
         borderLeft: active ? "var(--color-secondary) 2px solid" : "",
       }}
       className="text-stone-500 py-2 uppercase font-extrabold flex items-center cursor-pointer 
-      hover:text-color_primary hover:border-l-2 border-rose-500 transition-colors"
+      lg:hover:text-color_primary border-rose-500 transition-colors"
     >
       {name}.
     </a>
