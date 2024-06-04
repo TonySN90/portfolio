@@ -18,7 +18,13 @@ function Project({
 
   return (
     <div className="w-full sm:w-[48%] bg-transparent transition-all p-4 border border-color_primary_dark rounded-lg">
-      <div className="bg-red-200 w-full max-h-64 rounded-lg mb-3 overflow-hidden">
+      <div
+        className="bg-red-200 w-full max-h-64 rounded-lg mb-3 overflow-hidden cursor-pointer"
+        onClick={() => {
+          setCurrentProject(name);
+          openModal();
+        }}
+      >
         <img
           className="z-30 size- hover:scale-110 transition-all duration-500"
           src={img}
