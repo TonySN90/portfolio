@@ -42,8 +42,7 @@ function Projects() {
                 key={project.name}
                 name={project.name}
                 techStack={project.techStack}
-                description={project.descriptionShort}
-                // github={project.github}
+                description={project.description}
                 img={project.img}
                 setCurrentProject={setCurrentProject}
               />

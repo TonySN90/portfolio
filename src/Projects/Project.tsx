@@ -28,7 +28,11 @@ function Project({
       <div className="h- rounded-b-lg bg-transparent">
         <Title size={1.2}>{name}</Title>
         <p className="text-color_primary my-2">{techStack}</p>
-        <p className="mb-2">{description}</p>
+        <p className="mb-2">
+          {description.length > 30
+            ? description.substring(0, 200) + "..."
+            : description}
+        </p>
         <p
           className="text-color_primary cursor-pointer"
           onClick={() => {
