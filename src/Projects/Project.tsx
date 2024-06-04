@@ -6,15 +6,15 @@ function Project({
   techStack,
   description,
   img,
-}: //   github,
-{
+  setCurrentProject,
+}: {
   name: string;
   techStack: string;
   description: string;
   img: string;
-  //   github: string;
+  setCurrentProject: (project: string) => void;
 }) {
-  const { setModalOpen } = useObserver();
+  const { openModal } = useObserver();
 
   return (
     <div className="w-full sm:w-[48%] bg-transparent transition-all p-4 border border-color_primary_dark rounded-lg">
@@ -22,6 +22,7 @@ function Project({
         <img
           className="z-30 size- hover:scale-110 transition-all duration-500"
           src={img}
+          alt={name}
         />
       </div>
       <div className="h- rounded-b-lg bg-transparent">
@@ -30,7 +31,10 @@ function Project({
         <p className="mb-2">{description}</p>
         <p
           className="text-color_primary cursor-pointer"
-          onClick={() => setModalOpen(true)}
+          onClick={() => {
+            setCurrentProject(name);
+            openModal();
+          }}
         >
           Erfahre mehr &#62;
         </p>

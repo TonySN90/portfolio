@@ -4,12 +4,14 @@ import SubTitle from "../components/SubTitle";
 import Title from "../components/Title";
 import Project from "./Project";
 import projectsData from "./projectsData";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useObserver } from "../contexts/ObserverContext";
+import ProjectModal from "./ProjectModal";
 
 function Projects() {
   const { handleViewChange } = useObserver();
   const projectsRef = useRef(null);
+  const [currentProject, setCurrentProject] = useState("");
 
   useEffect(() => {
     handleViewChange({ ref: projectsRef });
@@ -43,11 +45,13 @@ function Projects() {
                 description={project.descriptionShort}
                 // github={project.github}
                 img={project.img}
+                setCurrentProject={setCurrentProject}
               />
             ))}
           </div>
         </div>
       </SectionWrapper>
+      <ProjectModal projektName={currentProject} />
     </section>
   );
 }

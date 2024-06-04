@@ -34,6 +34,10 @@
   font-family: "Exo 2", sans-serif;
   scroll-behavior: smooth;
 }
+body {
+  overflow-y: scroll;
+}
+
 h1, h2, h3, h4, h5, h6, span, p, svg, a {
   color: #ffffffe5;
   background-color: transparent

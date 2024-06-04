@@ -4,7 +4,9 @@ interface ObserverContextType {
   inView: string;
   handleViewChange: ({ ref }: { ref: React.RefObject<HTMLElement> }) => void;
   modalOpen: boolean;
-  setModalOpen: (open: boolean) => void;
+  openModal: () => void;
+  closeModal: () => void;
+  // isMobile: boolean;
 }
 
 const ObserverContext = createContext<ObserverContextType | undefined>(
@@ -25,6 +27,16 @@ function ObserverProvider({ children }: { children: React.ReactNode }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  function openModal() {
+    setModalOpen(true);
+    document.body.style.overflowY = "hidden";
+  }
+
+  function closeModal() {
+    setModalOpen(false);
+    document.body.style.overflowY = "scroll";
+  }
+
   function handleViewChange({ ref }: { ref: React.RefObject<HTMLElement> }) {
     const options = {
       root: null, // viewport
@@ -42,7 +54,7 @@ function ObserverProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <ObserverContext.Provider
-      value={{ inView, handleViewChange, modalOpen, setModalOpen }}
+      value={{ inView, handleViewChange, modalOpen, openModal, closeModal }}
     >
       {children}
     </ObserverContext.Provider>
