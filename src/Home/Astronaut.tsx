@@ -1,8 +1,13 @@
+import { motion } from "framer-motion";
+
 function Astronaut() {
   return (
-    <div
+    <motion.div
       className="absolute left-[-40px] sm:left-[65%] bottom-[1px] z-20 animate-pulse animation-delay-1000"
       style={{ pointerEvents: "none", backgroundColor: "transparent" }}
+      initial={{ opacity: 0, y: 150 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 3, delay: 1 }}
     >
       <svg
         style={{ pointerEvents: "none", backgroundColor: "transparent" }}
@@ -50,7 +55,7 @@ function Astronaut() {
           fill-rule="nonzero"
         />
       </svg>
-    </div>
+    </motion.div>
   );
 }
 

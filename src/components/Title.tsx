@@ -2,7 +2,7 @@ function Title({
   children,
   reverse,
   center,
-  size,
+  size = 2.4,
 }: {
   children: React.ReactNode;
   reverse?: boolean;
@@ -20,12 +20,12 @@ function Title({
       {center && <div className="w-[100%] h-[1px] bg-stone-600 z-30"></div>}
       <h2
         style={{ fontSize: `${size}rem` }}
-        className="flex text-[2.4rem] sm:text-[3rem] font-bold z-30 bg-transparent"
+        className="flex sm:text-[3rem] font-bold z-30 bg-transparent"
       >
         {children}
         <span className="text-color_primary bg-transparent">.</span>
       </h2>
-      <div className="w-[100%] h-[1px] bg-stone-600 z-30"></div>
+      {!center && <div className="w-[100%] h-[1px] bg-stone-600 z-30"></div>}
     </div>
   );
 }
