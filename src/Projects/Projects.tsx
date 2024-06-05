@@ -7,6 +7,7 @@ import projectsData from "./projectsData";
 import { useEffect, useRef, useState } from "react";
 import { useObserver } from "../contexts/ObserverContext";
 import ProjectModal from "./ProjectModal";
+import Animation from "../components/Animation";
 
 function Projects() {
   const { handleViewChange } = useObserver();
@@ -25,16 +26,20 @@ function Projects() {
     snap-start text-right sm:text-left w-[calc(100vw-3rem)] sm:w-[calc(100vw-4rem)]"
     >
       <SectionWrapper>
-        <Title reverse={true}>Projekte</Title>
+        <Animation>
+          <Title reverse={true}>Projekte</Title>
+        </Animation>
         <div className="z-30 bg-transparent">
-          <SubTitle>
-            <div className="bg-color_primary min-w-8 size-8 flex justify-center items-center rounded-full">
-              <GoProjectSymlink className="bg-transparent text-color_background size-4" />
-            </div>
-            <span className="bg-transparent">
-              Hier findest du ene Auswahl meiner Projekte
-            </span>
-          </SubTitle>
+          <Animation>
+            <SubTitle>
+              <div className="bg-color_primary min-w-8 size-8 flex justify-center items-center rounded-full">
+                <GoProjectSymlink className="bg-transparent text-color_background size-4" />
+              </div>
+              <span className="bg-transparent">
+                Hier findest du ene Auswahl meiner Projekte
+              </span>
+            </SubTitle>
+          </Animation>
 
           <div className="flex flex-wrap gap-4 justify-between z-30 bg-transparent">
             {projectsData.map((project) => (
