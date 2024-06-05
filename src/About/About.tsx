@@ -7,8 +7,7 @@ import GitHubCalendar from "react-github-calendar";
 import { ThemeInput } from "react-activity-calendar";
 import { useEffect, useRef } from "react";
 import { useObserver } from "../contexts/ObserverContext";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+
 import Animation from "../components/Animation";
 
 function About() {
@@ -18,10 +17,6 @@ function About() {
 
   const { handleViewChange } = useObserver();
   const aboutRef = useRef(null);
-
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-  });
 
   useEffect(() => {
     handleViewChange({ ref: aboutRef });
@@ -34,11 +29,11 @@ function About() {
       scrollContainer.scrollLeft =
         scrollContainer.scrollWidth - scrollContainer.clientWidth;
     }, 600);
-  }, []);
+  }, [handleViewChange]);
 
   return (
     <section
-      ref={ref}
+      ref={aboutRef}
       className="relative flex justify-center items-center py-16
     snap-start sm:text-left w-[calc(100vw-3rem)] sm:w-[calc(100vw-4rem)]"
       id="wer"
