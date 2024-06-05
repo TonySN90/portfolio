@@ -13,9 +13,27 @@ function LinkIcons() {
         }}
         className="fixed flex gap-5 left-[2rem] top-[-2rem] z-40 bg-transparent "
       >
-        <FiGithub className="w-5 h-5 cursor-pointer bg-transparent " />
-        <FaLinkedinIn className="w-5 h-5 cursor-pointer bg-transparent" />
-        <SiGmail className="w-5 h-5 cursor-pointer bg-transparent" />
+        <motion.span
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          <FiGithub className="w-5 h-5 cursor-pointer bg-transparent" />
+        </motion.span>
+        <motion.span
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.8 }}
+        >
+          <FaLinkedinIn className="w-5 h-5 cursor-pointer bg-transparent" />
+        </motion.span>
+        <motion.span
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1.3 }}
+        >
+          <SiGmail className="w-5 h-5 cursor-pointer bg-transparent" />
+        </motion.span>
       </motion.div>
     </div>
   );

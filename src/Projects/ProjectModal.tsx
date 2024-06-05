@@ -30,7 +30,7 @@ function ProjectModal({ projektName }: { projektName: string }) {
         </motion.div>
 
         {/* Content */}
-        <div className="fixed top-10 left-1/2 -translate-x-1/2 h-screen p-2 max-w-[600px] z-50 bg-transparent overflow-y-auto">
+        <div className="fixed top-10 left-1/2 -translate-x-1/2 h-[calc(100vh-2.5rem)] p-2 w-full max-w-[700px] z-50 bg-transparent overflow-y-auto">
           <motion.div
             className="flex flex-col bg-transparent"
             initial={{ opacity: 0, scale: 0.8 }}

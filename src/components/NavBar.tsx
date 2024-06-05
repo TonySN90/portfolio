@@ -8,8 +8,10 @@ function NavBar() {
   return (
     <>
       <motion.div
-        animate={{ right: -1, transition: { duration: 1, ease: "easeInOut" } }}
-        className="fixed right-[-3.5rem] sm:right-[-4rem] flex flex-col justify-center gap-3 w-[3rem] sm:w-[4rem] bg-color_background z-30 h-full pt-10 "
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 1.2 }}
+        className="fixed right-[0rem] sm:right-[0rem] flex flex-col justify-center gap-3 w-[3rem] sm:w-[4rem] bg-color_background z-30 h-full pt-10"
       >
         {navEntries.map((name) => (
           <NavEntry key={name} name={name} active={inView === name} />
