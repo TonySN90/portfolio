@@ -1,7 +1,7 @@
 import { FaLinkedinIn } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
-import { SiGmail } from "react-icons/si";
 import { motion } from "framer-motion";
+import { MdEmail } from "react-icons/md";
 
 function LinkIcons() {
   return (
@@ -32,7 +32,7 @@ function LinkIcons() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.3 }}
         >
-          <SiGmail className="w-5 h-5 cursor-pointer bg-transparent" />
+          <MdEmail className="w-5 h-5 cursor-pointer bg-transparent" />
         </motion.span>
       </motion.div>
     </div>

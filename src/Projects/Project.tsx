@@ -23,6 +23,7 @@ function Project({
       <AnimationShowElement>
         <div className="w-full bg-transparent transition-all p-4 border border-color_primary_dark rounded-lg">
           <div
+            style={{ pointerEvents: "visible" }}
             className="bg-red-200 w-full max-h-64 rounded-lg mb-3 overflow-hidden cursor-pointer"
             onClick={() => {
               setCurrentProject(name);
@@ -44,6 +45,7 @@ function Project({
                 : description}
             </p>
             <p
+              style={{ pointerEvents: "visible" }}
               className="text-color_primary cursor-pointer"
               onClick={() => {
                 setCurrentProject(name);

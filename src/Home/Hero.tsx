@@ -5,12 +5,15 @@ import AnimationShowElement from "../animations/AnimationShowElement";
 
 function Hero() {
   return (
-    <div className="z-30 bg-transparent bg-red-50 uppercase">
+    <div
+      className="z-30 bg-transparent uppercase"
+      style={{ pointerEvents: "none" }}
+    >
       <div className="relative z-30 bg-transparent">
         <AnimationShowElement>
           <h1
-            style={{ backgroundColor: "transparent", pointerEvents: "none" }}
-            className="font-bold text-[2.6rem] sm:text-[6vw] z-30 p-0 opacity-"
+            style={{ pointerEvents: "none" }}
+            className="font-bold text-[2.6rem] sm:text-[6vw] z-30 p-0 bg-transparent"
           >
             Hey, Ich bin Tony
             <span className="text-color_primary bg-transparent">.</span>
@@ -24,12 +27,11 @@ function Hero() {
             style={{ backgroundColor: "transparent", pointerEvents: "none" }}
             className="text-[1.1rem] sm:text-[2.5vw] md:mt-[-15px] text-color_primary z-30"
           >
-            front end developer
+            frontend developer
           </h2>
         </AnimationShowElement>
         <AnimationHideBanner />
       </div>
-      <div className="relative z-30 bg-transparent"></div>
       <div className="relative z-30 bg-transparent overflow-hidden">
         <AnimationShowElement>
           <p
@@ -43,7 +45,8 @@ function Hero() {
       </div>
 
       <motion.div
-        className="w-full flex justify-end sm:justify-center pr-16 sm:p-0 mt-10 bg-transparent"
+        style={{ pointerEvents: "visible" }}
+        className="w-full flex justify-end sm:justify-center pr-16 sm:p-0 mt-10 bg-transparent "
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.7 }}

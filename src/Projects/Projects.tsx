@@ -21,6 +21,7 @@ function Projects() {
 
   return (
     <section
+      style={{ pointerEvents: "none" }}
       ref={projectsRef}
       id="proj"
       className="relative flex justify-center items-center py-16

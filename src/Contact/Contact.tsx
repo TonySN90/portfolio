@@ -17,6 +17,7 @@ function Contact() {
   });
   return (
     <section
+      style={{ pointerEvents: "none" }}
       ref={contactRef}
       id="kont"
       className="relative h-[50vh] flex justify-center items-center py-16
@@ -45,7 +46,10 @@ function Contact() {
           <AnimationShowElement>
             <div className="flex items-center gap-2 z-30 bg-transparent mb-4">
               <MdEmail className="text-2xl" />
-              <p className="text-xl sm:text-2xl font-bold">
+              <p
+                style={{ pointerEvents: "visible" }}
+                className="text-xl sm:text-2xl font-bold"
+              >
                 tony.heider90@gmail.com
               </p>
             </div>
@@ -62,7 +66,10 @@ function Contact() {
           <AnimationHideBanner />
         </div>
 
-        <div className="m-auto relative z-30 bg-transparent">
+        <div
+          style={{ pointerEvents: "visible" }}
+          className="m-auto relative z-30 bg-transparent"
+        >
           <AnimationShowElement>
             <div className="z-30 flex gap-5 bg-transparent">
               <div className="size-14 bg-rose-600 flex justify-center items-center rounded-full cursor-pointer">

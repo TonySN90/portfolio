@@ -4,7 +4,6 @@ import React, { useState } from "react";
 
 function AnimationShowElement({
   children,
-  extras,
 }: {
   children: React.ReactNode;
   extras?: string;
@@ -18,7 +17,7 @@ function AnimationShowElement({
 
   return (
     <motion.div
-      className={`z-30 bg-transparent ${extras}`}
+      className="z-30 bg-transparent"
       ref={ref}
       initial={{ opacity: 0, x: 35 }}
       animate={{ opacity: hasAnimated ? 1 : 0, x: hasAnimated ? 0 : 35 }}
