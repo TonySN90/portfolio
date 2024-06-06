@@ -30,13 +30,17 @@ function Hero() {
         <AnimationHideBanner />
       </div>
       <div className="relative z-30 bg-transparent"></div>
-
-      <p
-        style={{ backgroundColor: "transparent", pointerEvents: "none" }}
-        className="my-4 z-30"
-      >
-        {"<Willkommen />"}
-      </p>
+      <div className="relative z-30 bg-transparent overflow-hidden">
+        <AnimationShowElement>
+          <p
+            style={{ backgroundColor: "transparent", pointerEvents: "none" }}
+            className="my-4 z-30"
+          >
+            {"<Willkommen />"}
+          </p>
+        </AnimationShowElement>
+        <AnimationHideBanner />
+      </div>
 
       <motion.div
         className="w-full flex justify-end sm:justify-center pr-16 sm:p-0 mt-10 bg-transparent"

@@ -7,7 +7,8 @@ import projectsData from "./projectsData";
 import { useEffect, useRef, useState } from "react";
 import { useObserver } from "../contexts/ObserverContext";
 import ProjectModal from "./ProjectModal";
-import Animation from "../animations/AnimationShowElement";
+import AnimationShowElement from "../animations/AnimationShowElement";
+import AnimationHideBanner from "../animations/AnimationHideBanner";
 
 function Projects() {
   const { handleViewChange } = useObserver();
@@ -26,20 +27,26 @@ function Projects() {
     snap-start text-right sm:text-left w-[calc(100vw-3rem)] sm:w-[calc(100vw-4rem)]"
     >
       <SectionWrapper>
-        <Animation>
-          <Title reverse={true}>Projekte</Title>
-        </Animation>
+        <div className="relative z-30 bg-transparent overflow-hidden">
+          <AnimationShowElement>
+            <Title reverse={true}>Projekte</Title>
+          </AnimationShowElement>
+          <AnimationHideBanner />
+        </div>
         <div className="z-30 bg-transparent">
-          <Animation>
-            <SubTitle>
-              <div className="bg-color_primary min-w-8 size-8 flex justify-center items-center rounded-full">
-                <GoProjectSymlink className="bg-transparent text-color_background size-4" />
-              </div>
-              <span className="bg-transparent">
-                Hier findest du ene Auswahl meiner Projekte
-              </span>
-            </SubTitle>
-          </Animation>
+          <div className="relative z-30 bg-transparent overflow-hidden">
+            <AnimationShowElement>
+              <SubTitle>
+                <div className="bg-color_primary min-w-8 size-8 flex justify-center items-center rounded-full">
+                  <GoProjectSymlink className="bg-transparent text-color_background size-4" />
+                </div>
+                <span className="bg-transparent">
+                  Hier findest du ene Auswahl meiner Projekte
+                </span>
+              </SubTitle>
+            </AnimationShowElement>
+            <AnimationHideBanner />
+          </div>
 
           <div className="flex flex-wrap gap-4 justify-between z-30 bg-transparent">
             {projectsData.map((project) => (

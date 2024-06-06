@@ -7,7 +7,7 @@ function Astronaut() {
       style={{ pointerEvents: "none", backgroundColor: "transparent" }}
       initial={{ opacity: 0, y: 150 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 3, delay: 1 }}
+      transition={{ duration: 1, delay: 1 }}
     >
       <svg
         style={{ pointerEvents: "none", backgroundColor: "transparent" }}

@@ -5,7 +5,8 @@ import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useObserver } from "../contexts/ObserverContext";
 import { useEffect, useRef } from "react";
-import Animation from "../animations/AnimationShowElement";
+import AnimationShowElement from "../animations/AnimationShowElement";
+import AnimationHideBanner from "../animations/AnimationHideBanner";
 
 function Contact() {
   const { handleViewChange } = useObserver();
@@ -22,39 +23,58 @@ function Contact() {
     snap-start text-center w-[calc(100vw-3rem)] sm:w-[calc(100vw-4rem)]"
     >
       <SectionWrapper>
-        <Animation>
-          <Title center={true}>Kontakt</Title>
-        </Animation>
-        <Animation>
-          <p className="m-auto z-30 mb-8 w-[90%]">
-            Lust auf Kontakt? Dann schick mir einfach eine E-Mail. Ich bin offen
-            für Ideen, Vorschläge und Anregungen. <br /> Let&#x27;s connect!
-          </p>
-        </Animation>
-        <Animation extras="m-auto">
-          <div className="flex items-center gap-2 z-30 bg-transparent mb-4">
-            <MdEmail className="text-2xl" />
-            <p className="text-xl sm:text-2xl font-bold">
-              tony.heider90@gmail.com
-            </p>
-          </div>
-        </Animation>
-        <Animation>
-          <p className="z-30 bg-transparent mb-6">
-            Du findest mich auch auf...
-          </p>
-        </Animation>
+        <div className="relative z-30 bg-transparent overflow-hidden">
+          <AnimationShowElement>
+            <Title center={true}>Kontakt</Title>
+          </AnimationShowElement>
+          <AnimationHideBanner />
+        </div>
 
-        <Animation extras="m-auto">
-          <div className="z-30 flex gap-5 bg-transparent">
-            <div className="size-14 bg-rose-600 flex justify-center items-center rounded-full cursor-pointer">
-              <FiGithub className="size-6 bg-transparent " />
+        <div className="relative z-30 bg-transparent overflow-hidden">
+          <AnimationShowElement>
+            <p className="m-auto z-30 mb-8 w-[90%]">
+              Lust auf Kontakt? Dann schick mir einfach eine E-Mail. Ich bin
+              offen für Ideen, Vorschläge und Anregungen. <br /> Let&#x27;s
+              connect!
+            </p>
+          </AnimationShowElement>
+          <AnimationHideBanner />
+        </div>
+
+        <div className="m-auto relative z-30 bg-transparent overflow-hidden">
+          <AnimationShowElement>
+            <div className="flex items-center gap-2 z-30 bg-transparent mb-4">
+              <MdEmail className="text-2xl" />
+              <p className="text-xl sm:text-2xl font-bold">
+                tony.heider90@gmail.com
+              </p>
             </div>
-            <div className="size-14 bg-rose-600 flex justify-center items-center rounded-full cursor-pointer">
-              <FaLinkedinIn className="size-6 bg-transparent" />
+          </AnimationShowElement>
+          <AnimationHideBanner />
+        </div>
+
+        <div className="relative z-30 bg-transparent overflow-hidden">
+          <AnimationShowElement>
+            <p className="z-30 bg-transparent mb-6">
+              Du findest mich auch auf...
+            </p>
+          </AnimationShowElement>
+          <AnimationHideBanner />
+        </div>
+
+        <div className="m-auto relative z-30 bg-transparent">
+          <AnimationShowElement>
+            <div className="z-30 flex gap-5 bg-transparent">
+              <div className="size-14 bg-rose-600 flex justify-center items-center rounded-full cursor-pointer">
+                <FiGithub className="size-6 bg-transparent " />
+              </div>
+              <div className="size-14 bg-rose-600 flex justify-center items-center rounded-full cursor-pointer">
+                <FaLinkedinIn className="size-6 bg-transparent" />
+              </div>
             </div>
-          </div>
-        </Animation>
+          </AnimationShowElement>
+          <AnimationHideBanner />
+        </div>
         <div className="h-[200px]"></div>
       </SectionWrapper>
     </section>
