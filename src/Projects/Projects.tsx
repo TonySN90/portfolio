@@ -7,7 +7,7 @@ import projectsData from "./projectsData";
 import { useEffect, useRef, useState } from "react";
 import { useObserver } from "../contexts/ObserverContext";
 import ProjectModal from "./ProjectModal";
-import Animation from "../components/Animation";
+import Animation from "../animations/AnimationShowElement";
 
 function Projects() {
   const { handleViewChange } = useObserver();

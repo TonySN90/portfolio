@@ -1,4 +1,4 @@
-import Animation from "../components/Animation";
+import Animation from "../animations/AnimationShowElement";
 import Title from "../components/Title";
 import { useObserver } from "../contexts/ObserverContext";
 
