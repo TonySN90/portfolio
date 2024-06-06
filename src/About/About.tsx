@@ -127,7 +127,7 @@ function About() {
 
             <div className="relative z-30 bg-transparent">
               <AnimationShowElement>
-                <div className="group relative bg-transparent transition-all">
+                <div className="group relative bg-transparent transition-all mb-5 md:mb-0">
                   <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 m-auto z-30 text-[4rem] group-hover:opacity-0 transition-all">
                     ?
                   </span>

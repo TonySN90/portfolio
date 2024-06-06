@@ -1,6 +1,5 @@
 import AnimationHideBanner from "../animations/AnimationHideBanner";
 import AnimationShowElement from "../animations/AnimationShowElement";
-import Title from "../components/Title";
 import { useObserver } from "../contexts/ObserverContext";
 
 function Project({
@@ -37,7 +36,9 @@ function Project({
             />
           </div>
           <div className="h- rounded-b-lg bg-transparent">
-            <Title size={1.2}>{name}</Title>
+            <h2 className="text-xl font-bold">
+              {name} <span className="text-color_primary">.</span>
+            </h2>
             <p className="text-color_primary my-2">{techStack}</p>
             <p className="mb-2 text-lg">
               {description.length > 30

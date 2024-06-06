@@ -40,7 +40,7 @@ function ObserverProvider({ children }: { children: React.ReactNode }) {
   function handleViewChange({ ref }: { ref: React.RefObject<HTMLElement> }) {
     const options = {
       root: null, // viewport
-      threshold: isMobile ? 0.25 : 0.7, // trigger when 60% (desktop) or 20% (mobile) of the element is visible
+      threshold: isMobile ? 0.15 : 0.5, // trigger when 60% (desktop) or 20% (mobile) of the element is visible
     };
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
