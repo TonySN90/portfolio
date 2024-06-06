@@ -33,7 +33,7 @@ function Contact() {
 
         <div className="relative z-30 bg-transparent overflow-hidden">
           <AnimationShowElement>
-            <p className="m-auto z-30 mb-8 w-[90%]">
+            <p className="m-auto z-30 mb-8  text-lg">
               Lust auf Kontakt? Dann schick mir einfach eine E-Mail. Ich bin
               offen für Ideen, Vorschläge und Anregungen. <br /> Let&#x27;s
               connect!

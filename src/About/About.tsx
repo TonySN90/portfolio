@@ -34,7 +34,7 @@ function About() {
 
   return (
     <section
-      style={{ pointerEvents: "none" }}
+      // style={{ pointerEvents: "none" }}
       ref={aboutRef}
       className="relative flex justify-center items-center py-16
     snap-start sm:text-left w-[calc(100vw-3rem)] sm:w-[calc(100vw-4rem)]"
@@ -48,8 +48,8 @@ function About() {
           <AnimationHideBanner />
         </div>
 
-        <div className="z-30 bg-transparent flex flex-col sm:flex-row gap-6 mb-6">
-          <div className="z-30 flex flex-col gap-2 w-full md:w-[60%] bg-transparent pointer-events-none text-left text-lg">
+        <div className="z-30 bg-transparent flex flex-col sm:flex-row justify-between gap-6 mb-6">
+          <div className="z-30 flex flex-col gap-4 w-full md:w-[60%] bg-transparent pointer-events-none text-left text-lg">
             <div className="relative z-30 bg-transparent overflow-hidden">
               <AnimationShowElement>
                 <p className="bg-transparent">
@@ -89,41 +89,77 @@ function About() {
               <AnimationHideBanner />
             </div>
           </div>
-          <div className="w-full md:w-[40%] z-30 bg-transparent">
-            <div className="relative z-30 bg-transparent overflow-hidden">
-              <AnimationShowElement>
-                <SubTitle>
-                  <div className="bg-color_primary min-w-8 size-8 flex justify-center items-center rounded-full">
-                    <FaCode className="bg-transparent text-color_background size-4" />
+          <div className="flex flex-col-reverse md:flex-col justify-between w-full md:w-[35%] z-30 bg-transparent">
+            <div className="bg-transparent">
+              <div className="relative z-30 bg-transparent overflow-hidden">
+                <AnimationShowElement>
+                  <SubTitle>
+                    <div className="bg-color_primary min-w-8 size-8 flex justify-center items-center rounded-full">
+                      <FaCode className="bg-transparent text-color_background size-4" />
+                    </div>
+                    <p className="bg-transparent">
+                      Tech Stack // Erfahrungen mit...
+                    </p>
+                  </SubTitle>
+                </AnimationShowElement>
+                <AnimationHideBanner />
+              </div>
+
+              <div className="relative flex z-30 bg-transparent overflow-hidden">
+                <AnimationShowElement>
+                  <div className="flex flex-wrap md:justify-between gap-2 bg-transparent">
+                    <Chip>Javascript</Chip>
+                    <Chip>Typescript</Chip>
+                    <Chip>CSS</Chip>
+                    <Chip>Html</Chip>
+                    <Chip>React</Chip>
+                    <Chip>Redux</Chip>
+                    <Chip>Framer Motion</Chip>
+                    <Chip>Tailwind</Chip>
+                    <Chip>Github</Chip>
+                    <Chip>Vite</Chip>
+                    <Chip>Supabase</Chip>
                   </div>
-                  <p className="bg-transparent">
-                    Tech Stack // Erfahrungen mit...
-                  </p>
-                </SubTitle>
-              </AnimationShowElement>
-              <AnimationHideBanner />
+                </AnimationShowElement>
+                <AnimationHideBanner />
+              </div>
             </div>
 
-            <div className="relative z-30 bg-transparent overflow-hidden">
+            <div className="relative z-30 bg-transparent">
               <AnimationShowElement>
-                <div className="flex flex-wrap gap-2 bg-transparent">
-                  <Chip>Javascript</Chip>
-                  <Chip>Typescript</Chip>
-                  <Chip>CSS</Chip>
-                  <Chip>Html</Chip>
-                  <Chip>React</Chip>
-                  <Chip>Redux</Chip>
-                  <Chip>Tailwind</Chip>
-                  <Chip>Github</Chip>
-                  <Chip>Vite</Chip>
-                  <Chip>Supabase</Chip>
+                <div className="group relative bg-transparent transition-all">
+                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 m-auto z-30 text-[4rem] group-hover:opacity-0 transition-all">
+                    ?
+                  </span>
+                  <img
+                    className="w-[80%] rounded-full p-4 m-auto bg-transparent blur group-hover:blur-none border-2 border-color_primary"
+                    src="avatar.jpeg"
+                    alt="Avatar"
+                  />
                 </div>
               </AnimationShowElement>
               <AnimationHideBanner />
             </div>
+            {/* </div> */}
+            {/* <div className="relative z-30 bg-transparent">
+              <AnimationShowElement>
+                <div className="group relative bg-transparent transition-all">
+                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 m-auto z-30 text-[4rem] group-hover:opacity-0 transition-all">
+                    ?
+                  </span>
+                  <img
+                    className="w-[80%] rounded-full p-4 m-auto bg-transparent blur group-hover:blur-none border-2 border-color_primary"
+                    src="avatar.jpeg"
+                    alt="Avatar"
+                  />
+                </div>
+                <AnimationHideBanner />
+              </AnimationShowElement>
+            </div> */}
           </div>
         </div>
-        <div className="relative z-30 bg-transparent overflow-hidden">
+
+        <div className="relative z-30 bg-transparent">
           <AnimationShowElement>
             <div className="z-30 bg-transparent rounded-lg p-3 w-[100%] border border-color_primary_dark">
               <SubTitle>
@@ -133,7 +169,10 @@ function About() {
                 <p className="bg-transparent">Contributions</p>
               </SubTitle>
 
-              <div className="bg-transparent">
+              <div
+                className="bg-transparent"
+                style={{ pointerEvents: "visible" }}
+              >
                 <GitHubCalendar
                   // @ts-expect-error next-line theme is not typed
                   theme={explicitTheme}
