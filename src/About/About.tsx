@@ -49,12 +49,15 @@ function About() {
         </div>
 
         <div className="z-30 bg-transparent flex flex-col sm:flex-row gap-6 mb-6">
-          <div className="z-30 flex flex-col gap-2 w-full md:w-[60%] bg-transparent pointer-events-none text-left">
+          <div className="z-30 flex flex-col gap-2 w-full md:w-[60%] bg-transparent pointer-events-none text-left text-lg">
             <div className="relative z-30 bg-transparent overflow-hidden">
               <AnimationShowElement>
                 <p className="bg-transparent">
-                  Geboren in Bergen und aufgewachsen auf Rügen. Inzwischen
-                  beheimatet in Schwerin mit einer kleinen wundervollen Familie.
+                  Ich bin Tony, geboren in Bergen und aufgewachsen auf Rügen,
+                  lebe ich heute mit meiner wundervollen Familie in Schwerin.
+                  Schon in meiner Jugend habe ich eine Leidenschaft für die
+                  kreative Arbeit mit digitalen Medien und das Programmieren
+                  entwickelt. Damals begann ich, erste Webseiten zu erstellen.
                 </p>
               </AnimationShowElement>
               <AnimationHideBanner />
@@ -63,9 +66,12 @@ function About() {
             <div className="relative z-30 bg-transparent overflow-hidden">
               <AnimationShowElement>
                 <p className="bg-transparent">
-                  Meine Leidenschaft zur kreativen Arbeit mit digitalen Medien
-                  und dem Programmieren kamen schon während des Jugendalters.
-                  Damals fing ich an, erste Webseiten selber zu erstellen.
+                  Angefangen mit HTML, CSS und Javascript habe ich Inzwischen
+                  viele Erfahrungen in Projekten mit modernen Technologien wie
+                  React, TypeScript und Tailwind sammeln können. Ich bin stets
+                  auf der Suche nach neuen Herausforderungen und Möglichkeiten,
+                  mein Wissen zu erweitern und meine Fähigkeiten weiter zu
+                  auszubauen.
                 </p>
               </AnimationShowElement>
               <AnimationHideBanner />
@@ -74,9 +80,10 @@ function About() {
             <div className="relative z-30 bg-transparent overflow-hidden">
               <AnimationShowElement>
                 <p className="bg-transparent">
-                  Heute bin ich stets auf der Suche nach neuen Herausforderungen
-                  und Möglichkeiten, um mein Wissen zu erweitern und mein
-                  Handwerk zu perfektionieren.
+                  Mein Ziel ist es, den Einstieg in Welt der Softwareentwicklung
+                  zu finden und als Frontend-Entwickler tätig zu werden, wobei
+                  ich stets danach strebe, innovative und ansprechende digitale
+                  Lösungen zu schaffen.
                 </p>
               </AnimationShowElement>
               <AnimationHideBanner />
