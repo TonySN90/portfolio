@@ -48,13 +48,21 @@ function ProjectModal({ projektName }: { projektName: string }) {
                 <div className="flex gap-3">
                   <div className="flex items-center gap-1 bg-inherit">
                     <PiGithubLogoFill className="text-color_primary" />
-                    <a className="text-color_primary" href={project?.github}>
+                    <a
+                      className="text-color_primary"
+                      href={project?.github}
+                      target="_blank"
+                    >
                       Source Code
                     </a>
                   </div>
                   <div className="flex items-center gap-1 bg-inherit">
                     <RxExternalLink className="text-color_primary" />
-                    <a className="text-color_primary" href={project?.link}>
+                    <a
+                      className="text-color_primary"
+                      href={project?.link}
+                      target="_blank"
+                    >
                       Live Projekt
                     </a>
                   </div>

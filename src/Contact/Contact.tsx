@@ -44,14 +44,18 @@ function Contact() {
 
         <div className="m-auto relative z-30 bg-transparent overflow-hidden">
           <AnimationShowElement>
-            <div className="flex items-center gap-2 z-30 bg-transparent mb-4">
+            <div
+              style={{ pointerEvents: "visible" }}
+              className="flex items-center gap-2 z-30 bg-transparent mb-4"
+            >
               <MdEmail className="text-2xl" />
-              <p
+              <a
+                href="mailto:tony.heider90@gmail.com"
                 style={{ pointerEvents: "visible" }}
                 className="text-xl sm:text-2xl font-bold"
               >
                 tony.heider90@gmail.com
-              </p>
+              </a>
             </div>
           </AnimationShowElement>
           <AnimationHideBanner />
@@ -73,10 +77,14 @@ function Contact() {
           <AnimationShowElement>
             <div className="z-30 flex gap-5 bg-transparent">
               <div className="size-14 bg-rose-600 flex justify-center items-center rounded-full cursor-pointer">
-                <FiGithub className="size-6 bg-transparent " />
+                <a href="https://github.com/TonySN90" target="_blank">
+                  <FiGithub className="size-6 bg-transparent " />
+                </a>
               </div>
               <div className="size-14 bg-rose-600 flex justify-center items-center rounded-full cursor-pointer">
-                <FaLinkedinIn className="size-6 bg-transparent" />
+                <a href="https://www.linkedin.com/" target="_blank">
+                  <FaLinkedinIn className="size-6 bg-transparent" />
+                </a>
               </div>
             </div>
           </AnimationShowElement>
