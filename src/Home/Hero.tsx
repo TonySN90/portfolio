@@ -13,7 +13,7 @@ function Hero() {
         <AnimationShowElement>
           <h1
             style={{ pointerEvents: "none" }}
-            className="font-bold text-[2.6rem] sm:text-[6vw] z-30 p-0 bg-transparent"
+            className="font-bold text-[2.6rem] sm:text-[6vw] xl:text-max z-30 p-0 bg-transparent"
           >
             Hey, Ich bin Tony
             <span className="text-color_primary bg-transparent">.</span>

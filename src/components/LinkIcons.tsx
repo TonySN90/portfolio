@@ -18,21 +18,38 @@ function LinkIcons() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <FiGithub className="w-5 h-5 cursor-pointer bg-transparent" />
+          <a
+            className="hover:opacity-50 transition-opacity"
+            href="https://github.com/TonySN90"
+            target="_blank"
+          >
+            <FiGithub className="w-5 h-5 cursor-pointer bg-transparent" />
+          </a>
         </motion.span>
         <motion.span
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
         >
-          <FaLinkedinIn className="w-5 h-5 cursor-pointer bg-transparent" />
+          <a
+            className="hover:opacity-50 transition-opacity"
+            href="https://www.linkedin.com/"
+            target="_blank"
+          >
+            <FaLinkedinIn className="w-5 h-5 cursor-pointer bg-transparent" />
+          </a>
         </motion.span>
         <motion.span
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.3 }}
         >
-          <MdEmail className="w-5 h-5 cursor-pointer bg-transparent" />
+          <a
+            className="hover:opacity-50 transition-opacity"
+            href="mailto:tony.heider90@gmail.com"
+          >
+            <MdEmail className="w-5 h-5 cursor-pointer bg-transparent" />
+          </a>
         </motion.span>
       </motion.div>
     </div>

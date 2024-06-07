@@ -43,7 +43,7 @@ function About() {
       <SectionWrapper>
         <div className="relative z-30 bg-transparent overflow-hidden">
           <AnimationShowElement>
-            <Title>WerBinIch</Title>
+            <Title>WerIchBin</Title>
           </AnimationShowElement>
           <AnimationHideBanner />
         </div>
