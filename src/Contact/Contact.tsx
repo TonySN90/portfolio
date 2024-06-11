@@ -3,14 +3,14 @@ import SectionWrapper from "../components/SectionWrapper";
 import Title from "../components/Title";
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
-import { useObserver } from "../contexts/ObserverContext";
+import { usePortfolioContext } from "../contexts/PortfolioContext";
 import AnimationShowElement from "../animations/AnimationShowElement";
 import AnimationHideBanner from "../animations/AnimationHideBanner";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
 function Contact() {
-  const { setInView } = useObserver();
+  const { setInView } = usePortfolioContext();
 
   const { ref: contactStartRef, inView: contactStartView } = useInView({
     threshold: 1,
@@ -87,7 +87,10 @@ function Contact() {
                 </a>
               </div>
               <div className="size-14 bg-rose-600 flex justify-center items-center rounded-full cursor-pointer">
-                <a href="https://www.linkedin.com/" target="_blank">
+                <a
+                  href="https://www.linkedin.com/in/tony-heider-29a0a1313/"
+                  target="_blank"
+                >
                   <FaLinkedinIn className="size-6 bg-transparent" />
                 </a>
               </div>

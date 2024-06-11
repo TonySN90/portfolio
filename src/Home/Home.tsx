@@ -1,12 +1,12 @@
 import SectionWrapper from "../components/SectionWrapper";
 import Astronaut from "./Astronaut";
 import Hero from "./Hero";
-import { useObserver } from "../contexts/ObserverContext";
+import { usePortfolioContext } from "../contexts/PortfolioContext";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
 function Home() {
-  const { setInView } = useObserver();
+  const { setInView } = usePortfolioContext();
 
   const { ref, inView } = useInView({
     threshold: 1,

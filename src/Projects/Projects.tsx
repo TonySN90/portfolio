@@ -5,14 +5,14 @@ import Title from "../components/Title";
 import Project from "./Project";
 import { projectsData } from "../../data/projectsData";
 import { useEffect, useState } from "react";
-import { useObserver } from "../contexts/ObserverContext";
+import { usePortfolioContext } from "../contexts/PortfolioContext";
 import ProjectModal from "./ProjectModal";
 import AnimationShowElement from "../animations/AnimationShowElement";
 import AnimationHideBanner from "../animations/AnimationHideBanner";
 import { useInView } from "react-intersection-observer";
 
 function Projects() {
-  const { setInView, isMobile } = useObserver();
+  const { setInView, isMobile } = usePortfolioContext();
   const [currentProject, setCurrentProject] = useState("");
 
   const { ref: projectStartRef, inView: projectStartView } = useInView({

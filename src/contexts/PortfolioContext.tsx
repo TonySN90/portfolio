@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-interface ObserverContextType {
+interface PortfolioContextType {
   inView: string;
   setInView: React.Dispatch<React.SetStateAction<string>>;
   modalOpen: boolean;
@@ -9,11 +9,11 @@ interface ObserverContextType {
   isMobile: boolean;
 }
 
-const ObserverContext = createContext<ObserverContextType | undefined>(
+const PortfolioContext = createContext<PortfolioContextType | undefined>(
   undefined
 );
 
-function ObserverProvider({ children }: { children: React.ReactNode }) {
+function PortfolioProvider({ children }: { children: React.ReactNode }) {
   const [inView, setInView] = useState("start");
   const [isMobile, setIsMobile] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -38,7 +38,7 @@ function ObserverProvider({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <ObserverContext.Provider
+    <PortfolioContext.Provider
       value={{
         inView,
         setInView,
@@ -49,18 +49,18 @@ function ObserverProvider({ children }: { children: React.ReactNode }) {
       }}
     >
       {children}
-    </ObserverContext.Provider>
+    </PortfolioContext.Provider>
   );
 }
 
-const useObserver = () => {
-  const context = useContext(ObserverContext);
+const usePortfolioContext = () => {
+  const context = useContext(PortfolioContext);
   if (context === undefined) {
     throw new Error(
-      "useObserver muss innerhalb eines Observer Providers verwendet werden"
+      "usePortfolio muss innerhalb eines Portfolio Providers verwendet werden"
     );
   }
   return context;
 };
 
-export { ObserverProvider, useObserver };
+export { PortfolioProvider, usePortfolioContext };

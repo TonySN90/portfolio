@@ -1,7 +1,7 @@
 import AnimationHideBanner from "../animations/AnimationHideBanner";
 import AnimationShowElement from "../animations/AnimationShowElement";
 import Chip from "../components/Chip";
-import { useObserver } from "../contexts/ObserverContext";
+import { usePortfolioContext } from "../contexts/PortfolioContext";
 import LinkButtons from "./LinkButtons";
 
 function Project({
@@ -21,7 +21,7 @@ function Project({
   github: string;
   setCurrentProject: (project: string) => void;
 }) {
-  const { openModal } = useObserver();
+  const { openModal } = usePortfolioContext();
 
   return (
     <div

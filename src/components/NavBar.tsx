@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { useObserver } from "../contexts/ObserverContext";
+import { usePortfolioContext } from "../contexts/PortfolioContext";
 
 function NavBar() {
   const navEntries = ["start", "wer", "proj", "kont"];
-  const { inView } = useObserver();
+  const { inView } = usePortfolioContext();
 
   return (
     <>

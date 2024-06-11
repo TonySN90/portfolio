@@ -8,11 +8,11 @@ import LinkIcons from "./components/LinkIcons";
 import About from "./About/About";
 import Projects from "./Projects/Projects";
 import Contact from "./Contact/Contact";
-import { ObserverProvider } from "./contexts/ObserverContext";
+import { PortfolioProvider } from "./contexts/PortfolioContext";
 
 function App() {
   return (
-    <ObserverProvider>
+    <PortfolioProvider>
       <main className="w-full relative h-screen bg-transparent">
         <LinkIcons />
         <TileGrid />
@@ -24,7 +24,7 @@ function App() {
         <Projects />
         <Contact />
       </main>
-    </ObserverProvider>
+    </PortfolioProvider>
   );
 }
 

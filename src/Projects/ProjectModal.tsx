@@ -1,13 +1,13 @@
 import { IoMdClose } from "react-icons/io";
 import { motion } from "framer-motion";
-import { useObserver } from "../contexts/ObserverContext";
+import { usePortfolioContext } from "../contexts/PortfolioContext";
 import { projectsData } from "../../data/projectsData";
 import { createPortal } from "react-dom";
 import Chip from "../components/Chip";
 import LinkButtons from "./LinkButtons";
 
 function ProjectModal({ projektName }: { projektName: string }) {
-  const { modalOpen, closeModal } = useObserver();
+  const { modalOpen, closeModal } = usePortfolioContext();
 
   const project = projectsData.find((project) => project.name === projektName);
 

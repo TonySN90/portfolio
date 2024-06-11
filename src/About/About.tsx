@@ -6,7 +6,7 @@ import { LuGithub } from "react-icons/lu";
 import GitHubCalendar from "react-github-calendar";
 import { ThemeInput } from "react-activity-calendar";
 import { useEffect, useState } from "react";
-import { useObserver } from "../contexts/ObserverContext";
+import { usePortfolioContext } from "../contexts/PortfolioContext";
 import { myTechStack } from "../../data/projectsData";
 import { useInView } from "react-intersection-observer";
 
@@ -22,7 +22,7 @@ function About() {
     dark: ["#0aff9d18", "#0aff9d47", "#0aff9d85", "#0aff9dba", "#0aff9d"],
   };
 
-  const { setInView } = useObserver();
+  const { setInView } = usePortfolioContext();
 
   const { ref: aboutStartRef, inView: aboutStartView } = useInView({});
   const { ref: aboutEndRef, inView: aboutEndView } = useInView({

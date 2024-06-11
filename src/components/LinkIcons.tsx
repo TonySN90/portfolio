@@ -33,7 +33,7 @@ function LinkIcons() {
         >
           <a
             className="hover:opacity-50 transition-opacity"
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/tony-heider-29a0a1313/"
             target="_blank"
           >
             <FaLinkedinIn className="w-5 h-5 cursor-pointer bg-transparent" />
