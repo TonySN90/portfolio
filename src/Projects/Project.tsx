@@ -1,11 +1,15 @@
+import { MdRoundaboutRight } from "react-icons/md";
 import AnimationHideBanner from "../animations/AnimationHideBanner";
 import AnimationShowElement from "../animations/AnimationShowElement";
+import Button from "../components/Button";
 import Chip from "../components/Chip";
 import { useObserver } from "../contexts/ObserverContext";
+import { TbBrandGithubFilled } from "react-icons/tb";
+import { RxExternalLink } from "react-icons/rx";
 
 function Project({
   link,
-  githbub,
+  github,
   name,
   techStack,
   description,
@@ -22,7 +26,7 @@ function Project({
 
   return (
     <div
-      className="relative z-30  overflow-hidden w-full sm:w-[48%]"
+      className="relative z-30 overflow-hidden w-full sm:w-[48.5%]"
       style={{ pointerEvents: "visible" }}
     >
       <AnimationShowElement>
@@ -59,16 +63,31 @@ function Project({
                 ? description.substring(0, 200) + "..."
                 : description}
             </p>
-            <p
-              style={{ pointerEvents: "visible" }}
-              className="text-color_primary cursor-pointer"
-              onClick={() => {
-                setCurrentProject(name);
-                openModal();
-              }}
-            >
-              Erfahre mehr &#62;
-            </p>
+            <div className="flex flex-wrap justify-between items-end gap-4 mt-4">
+              <p
+                className="text-color_primary cursor-pointer"
+                onClick={() => {
+                  setCurrentProject(name);
+                  openModal();
+                }}
+              >
+                Erfahre mehr &#62;
+              </p>
+              <div className="flex gap-2">
+                <Button bgColor="color_primary" link={github}>
+                  <div className="bg-transparent flex items-center gap-1">
+                    <TbBrandGithubFilled className="text-color_background" />
+                    <p className="text-color_background">Code</p>
+                  </div>
+                </Button>
+                <Button bgColor="color_secondary" link={link}>
+                  <div className="bg-transparent flex items-center gap-1">
+                    <RxExternalLink />
+                    <p>Live Projekt</p>
+                  </div>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </AnimationShowElement>
