@@ -18,7 +18,6 @@ export default {
       fontSize: {
         max: "var(--fontSize-max)",
       },
-      // fontSize_max: "var(--fontSize-max)",
       colors: {
         color_background: "var(--color-background)",
         color_navbar: "var(--color-navbar)",

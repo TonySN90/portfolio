@@ -10,6 +10,7 @@ import { useObserver } from "../contexts/ObserverContext";
 
 import AnimationShowElement from "../animations/AnimationShowElement";
 import AnimationHideBanner from "../animations/AnimationHideBanner";
+import Chip from "../components/Chip";
 
 function About() {
   const explicitTheme: ThemeInput = {
@@ -111,13 +112,15 @@ function About() {
                     <Chip>Javascript</Chip>
                     <Chip>Typescript</Chip>
                     <Chip>CSS</Chip>
-                    <Chip>Html</Chip>
+                    <Chip>SCSS</Chip>
+                    <Chip>HTML</Chip>
                     <Chip>React</Chip>
                     <Chip>Redux</Chip>
                     <Chip>Framer Motion</Chip>
                     <Chip>Tailwind</Chip>
                     <Chip>Github</Chip>
                     <Chip>Vite</Chip>
+                    <Chip>npm</Chip>
                     <Chip>Supabase</Chip>
                   </div>
                 </AnimationShowElement>
@@ -140,22 +143,6 @@ function About() {
               </AnimationShowElement>
               <AnimationHideBanner />
             </div>
-            {/* </div> */}
-            {/* <div className="relative z-30 bg-transparent">
-              <AnimationShowElement>
-                <div className="group relative bg-transparent transition-all">
-                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 m-auto z-30 text-[4rem] group-hover:opacity-0 transition-all">
-                    ?
-                  </span>
-                  <img
-                    className="w-[80%] rounded-full p-4 m-auto bg-transparent blur group-hover:blur-none border-2 border-color_primary"
-                    src="avatar.jpeg"
-                    alt="Avatar"
-                  />
-                </div>
-                <AnimationHideBanner />
-              </AnimationShowElement>
-            </div> */}
           </div>
         </div>
 
@@ -197,11 +184,3 @@ function About() {
 }
 
 export default About;
-
-function Chip({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="bg-color_primary px-2 py-1 font-bold inline-block text-color_background rounded-full upper">
-      {children}
-    </div>
-  );
-}

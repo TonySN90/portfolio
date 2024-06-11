@@ -58,6 +58,8 @@ function Projects() {
                 description={project.description}
                 img={project.img}
                 setCurrentProject={setCurrentProject}
+                link={project.link}
+                github={project.github}
               />
             ))}
           </div>

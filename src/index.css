@@ -41,24 +41,6 @@ article {
   background-color: transparent
 }
 
-/* .styles-module_scrollContainer__-bJC8  {
-  background-color: transparent;
-  scrollbar-color: var(--color-primary-dark) #1f1f1f;
-  scrollbar-width: thin;
-}
-
-.styles-module_footer__ZQ-Bl{
-  background-color: transparent;
-}
-
-.react-activity-calendar__count {
-  color: #ffffffe5;
-  background-color: transparent
-}
-
-.styles-module_legendColors__kFY2e {
-  background-color: transparent
-} */
 
 ::-webkit-scrollbar {
   width: 0
