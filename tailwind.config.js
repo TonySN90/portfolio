@@ -16,7 +16,8 @@ export default {
         20: "repeat(25, minmax(0, 1fr))",
       },
       fontSize: {
-        max: "var(--fontSize-max)",
+        max_headerTitle: "var(--fontSize-headerTitleMax)",
+        max_headerSubTitle: "var(--fontSize-headerSubTitleMax)",
       },
       colors: {
         color_background: "var(--color-background)",

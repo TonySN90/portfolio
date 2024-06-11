@@ -32,7 +32,6 @@ function About() {
     window.addEventListener("resize", handleResize);
 
     windowWidth < 640 ? setShowText(false) : setShowText(true);
-    console.log(windowWidth < 640);
 
     handleViewChange({ ref: aboutRef });
     setTimeout(() => {

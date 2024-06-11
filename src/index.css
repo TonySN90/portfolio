@@ -12,7 +12,8 @@
   --color-radial-background: #0aff9d19;
   --color-border-grid: #1e1e1e;
   --color-card-background: #1f1f1f;
-  --fontSize-max: 5rem;
+  --fontSize-headerTitleMax: 5rem;
+  --fontSize-headerSubTitleMax: 3rem;
 
   --pos-1: 0%
   --pos-2: 59%

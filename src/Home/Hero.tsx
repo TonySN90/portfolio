@@ -12,8 +12,8 @@ function Hero() {
       <div className="relative z-30 bg-transparent">
         <AnimationShowElement>
           <h1
-            style={{ pointerEvents: "none" }}
-            className="font-bold text-[2.6rem] sm:text-[6vw] xl:text-max z-30 p-0 bg-transparent"
+            // style={{ pointerEvents: "none" }}
+            className="font-bold text-[2.6rem] sm:text-[6vw] xl:text-max_headerTitle z-30 p-0 bg-transparent"
           >
             Hey, Ich bin Tony
             <span className="text-color_primary bg-transparent">.</span>
@@ -25,7 +25,7 @@ function Hero() {
         <AnimationShowElement>
           <h2
             style={{ backgroundColor: "transparent", pointerEvents: "none" }}
-            className="text-[1.1rem] sm:text-[2.5vw] md:mt-[-15px] text-color_primary z-30"
+            className="text-[1.1rem] sm:text-[2.5vw] xl:text-max_headerSubTitle md:mt-[-15px] text-color_primary z-30"
           >
             frontend developer
           </h2>
