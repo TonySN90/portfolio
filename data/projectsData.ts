@@ -35,13 +35,13 @@ export const projectsData = [
     name: "Traveltrack",
     techStack: ["Javascript", "React", "SCSS-Modules", "Context", "Supabase"],
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. A quas illo animi quis similique veritatis sed, eos, natus travel. Lorem ipsum, dolor sit amet consectetur adipisicing elit. A quas illo animi quis similique veritatis sed, eos, natus travel Lorem ipsum, dolor sit amet consectetur adipisicing elit. A quas illo animi quis similique veritatis sed, eos, natus travel",
+      "Die Website Traveltrack bietet ein Tool zur Verfolgung von Reisen oder Ausflügen. Nutzer können ihre Reiseziele eingeben, Aktivitäten und Sehenswürdigkeiten hinzufügen und ihre Reisespots visualisieren. Das Ziel der Seite ist es, Reisenden zu helfen, ihre Abenteuer zu organisieren und den Überblick zu behalten. Die Benutzeroberfläche ist benutzerfreundlich gestaltet, um eine einfache Navigation zu ermöglichen.",
     github: "https://github.com/TonySN90/traveltrack",
     link: "https://traveltrack.netlify.app/",
     img: "TT.webp",
   },
   {
-    name: "WetterApp - PWA",
+    name: "Wetter- PWA",
     techStack: ["HTML", "SCSS", "Javascript"],
     description:
       "Eine Wetter-App darf in meinem Portfolio nicht fehlen. Diese App, die im ansprechenden Design gestaltet ist, nutzt die API von OpenWeather. Sie bietet Informationen über die aktuelle Wetterlage auch stündliche und 5-Tage-Vorhersagen sowie Informationen zur Luftqualität. Favoriten und das gewählte Theme werden im localStorage gespeichert.",

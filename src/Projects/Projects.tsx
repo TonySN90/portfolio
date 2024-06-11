@@ -4,25 +4,28 @@ import SubTitle from "../components/SubTitle";
 import Title from "../components/Title";
 import Project from "./Project";
 import { projectsData } from "../../data/projectsData";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useObserver } from "../contexts/ObserverContext";
 import ProjectModal from "./ProjectModal";
 import AnimationShowElement from "../animations/AnimationShowElement";
 import AnimationHideBanner from "../animations/AnimationHideBanner";
+import { useInView } from "react-intersection-observer";
 
 function Projects() {
-  const { handleViewChange } = useObserver();
-  const projectsRef = useRef(null);
+  const { setInView, isMobile } = useObserver();
   const [currentProject, setCurrentProject] = useState("");
 
-  useEffect(() => {
-    handleViewChange({ ref: projectsRef });
+  const { ref: projectStartRef, inView: projectStartView } = useInView({
+    threshold: isMobile ? 0.1 : 0.4,
   });
+
+  useEffect(() => {
+    projectStartView && setInView("proj");
+  }, [projectStartView, setInView]);
 
   return (
     <section
       style={{ pointerEvents: "none" }}
-      ref={projectsRef}
       id="proj"
       className="relative flex justify-center items-center py-16
     snap-start text-right sm:text-left w-[calc(100vw-3rem)] sm:w-[calc(100vw-4rem)]"
@@ -49,7 +52,10 @@ function Projects() {
             <AnimationHideBanner />
           </div>
 
-          <div className="flex flex-wrap gap-4 justify-between z-30 bg-transparent">
+          <div
+            ref={projectStartRef}
+            className="flex flex-wrap gap-4 justify-between z-30 bg-transparent"
+          >
             {projectsData.map((project) => (
               <Project
                 key={project.name}

@@ -4,21 +4,26 @@ import Title from "../components/Title";
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useObserver } from "../contexts/ObserverContext";
-import { useEffect, useRef } from "react";
 import AnimationShowElement from "../animations/AnimationShowElement";
 import AnimationHideBanner from "../animations/AnimationHideBanner";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 function Contact() {
-  const { handleViewChange } = useObserver();
-  const contactRef = useRef(null);
+  const { setInView } = useObserver();
+
+  const { ref: contactStartRef, inView: contactStartView } = useInView({
+    threshold: 1,
+  });
 
   useEffect(() => {
-    handleViewChange({ ref: contactRef });
-  });
+    contactStartView && setInView("kont");
+  }, [contactStartView, setInView]);
+
   return (
     <section
       style={{ pointerEvents: "none" }}
-      ref={contactRef}
+      ref={contactStartRef}
       id="kont"
       className="relative h-[50vh] flex justify-center items-center py-16
     snap-start text-center w-[calc(100vw-3rem)] sm:w-[calc(100vw-4rem)]"
@@ -90,7 +95,7 @@ function Contact() {
           </AnimationShowElement>
           <AnimationHideBanner />
         </div>
-        <div className="h-[200px]"></div>
+        <div className="h-[300px]"></div>
       </SectionWrapper>
     </section>
   );

@@ -5,9 +5,10 @@ import SubTitle from "../components/SubTitle";
 import { LuGithub } from "react-icons/lu";
 import GitHubCalendar from "react-github-calendar";
 import { ThemeInput } from "react-activity-calendar";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useObserver } from "../contexts/ObserverContext";
 import { myTechStack } from "../../data/projectsData";
+import { useInView } from "react-intersection-observer";
 
 import AnimationShowElement from "../animations/AnimationShowElement";
 import AnimationHideBanner from "../animations/AnimationHideBanner";
@@ -21,8 +22,17 @@ function About() {
     dark: ["#0aff9d18", "#0aff9d47", "#0aff9d85", "#0aff9dba", "#0aff9d"],
   };
 
-  const { handleViewChange } = useObserver();
-  const aboutRef = useRef(null);
+  const { setInView } = useObserver();
+
+  const { ref: aboutStartRef, inView: aboutStartView } = useInView({});
+  const { ref: aboutEndRef, inView: aboutEndView } = useInView({
+    threshold: 1,
+  });
+
+  useEffect(() => {
+    aboutStartView && setInView("wer");
+    aboutEndView && setInView("wer");
+  }, [setInView, aboutStartView, aboutEndView]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -33,7 +43,6 @@ function About() {
 
     windowWidth < 640 ? setShowText(false) : setShowText(true);
 
-    handleViewChange({ ref: aboutRef });
     setTimeout(() => {
       // UseRef unfortunately not usable
       const scrollContainer = document.querySelector(
@@ -47,11 +56,11 @@ function About() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [handleViewChange, windowWidth]);
+  }, [windowWidth]);
 
   return (
     <section
-      ref={aboutRef}
+      // ref={aboutRef}
       className="relative flex justify-center items-center py-16
     snap-start sm:text-left w-[calc(100vw-3rem)] sm:w-[calc(100vw-4rem)]"
       id="wer"
@@ -68,7 +77,7 @@ function About() {
           <div className="z-30 flex flex-col gap-4 w-full md:w-[60%] bg-transparent pointer-events-none text-left text-lg">
             <div className="relative z-30 bg-transparent overflow-hidden">
               <AnimationShowElement>
-                <p className="bg-transparent">
+                <p ref={aboutStartRef} className="bg-transparent">
                   Ich bin Tony, geboren in Bergen und aufgewachsen auf Rügen,
                   lebe ich heute mit meiner wundervollen Familie in Schwerin.
                   Schon in meiner Jugend habe ich eine Leidenschaft für die
@@ -174,7 +183,7 @@ function About() {
                 <div className="bg-color_primary min-w-8 size-8 flex justify-center items-center rounded-full">
                   <LuGithub className="text-color_background size-5" />
                 </div>
-                <p>Contributions</p>
+                <p ref={aboutEndRef}>Contributions</p>
               </SubTitle>
 
               <div

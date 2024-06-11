@@ -2,11 +2,11 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 interface ObserverContextType {
   inView: string;
-  handleViewChange: ({ ref }: { ref: React.RefObject<HTMLElement> }) => void;
+  setInView: React.Dispatch<React.SetStateAction<string>>;
   modalOpen: boolean;
   openModal: () => void;
   closeModal: () => void;
-  // isMobile: boolean;
+  isMobile: boolean;
 }
 
 const ObserverContext = createContext<ObserverContextType | undefined>(
@@ -37,24 +37,16 @@ function ObserverProvider({ children }: { children: React.ReactNode }) {
     document.body.style.overflowY = "scroll";
   }
 
-  function handleViewChange({ ref }: { ref: React.RefObject<HTMLElement> }) {
-    const options = {
-      root: null, // viewport
-      threshold: isMobile ? 0.15 : 0.5, // trigger when 60% (desktop) or 20% (mobile) of the element is visible
-    };
-    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) setInView(entry.target.id);
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, options);
-    if (ref.current) observer.observe(ref.current);
-  }
-
   return (
     <ObserverContext.Provider
-      value={{ inView, handleViewChange, modalOpen, openModal, closeModal }}
+      value={{
+        inView,
+        setInView,
+        isMobile,
+        modalOpen,
+        openModal,
+        closeModal,
+      }}
     >
       {children}
     </ObserverContext.Provider>
