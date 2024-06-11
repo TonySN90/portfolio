@@ -10,7 +10,7 @@ function Chip({
     : "text-color_background bg-color_primary";
 
   return (
-    <div className={`px-3 py-1 rounded-full font-semibold ${invertedClass}`}>
+    <div className={`p-4 py-1 rounded-full font-semibold ${invertedClass}`}>
       {children}
     </div>
   );

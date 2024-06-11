@@ -5,7 +5,7 @@ import SubTitle from "../components/SubTitle";
 import { LuGithub } from "react-icons/lu";
 import GitHubCalendar from "react-github-calendar";
 import { ThemeInput } from "react-activity-calendar";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useObserver } from "../contexts/ObserverContext";
 import { myTechStack } from "../../data/projectsData";
 
@@ -14,6 +14,9 @@ import AnimationHideBanner from "../animations/AnimationHideBanner";
 import Chip from "../components/Chip";
 
 function About() {
+  const [showText, setShowText] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   const explicitTheme: ThemeInput = {
     dark: ["#0aff9d18", "#0aff9d47", "#0aff9d85", "#0aff9dba", "#0aff9d"],
   };
@@ -22,6 +25,15 @@ function About() {
   const aboutRef = useRef(null);
 
   useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    windowWidth < 640 ? setShowText(false) : setShowText(true);
+    console.log(windowWidth < 640);
+
     handleViewChange({ ref: aboutRef });
     setTimeout(() => {
       // UseRef unfortunately not usable
@@ -32,11 +44,14 @@ function About() {
       scrollContainer.scrollLeft =
         scrollContainer.scrollWidth - scrollContainer.clientWidth;
     }, 600);
-  }, [handleViewChange]);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleViewChange, windowWidth]);
 
   return (
     <section
-      // style={{ pointerEvents: "none" }}
       ref={aboutRef}
       className="relative flex justify-center items-center py-16
     snap-start sm:text-left w-[calc(100vw-3rem)] sm:w-[calc(100vw-4rem)]"
@@ -59,13 +74,27 @@ function About() {
                   lebe ich heute mit meiner wundervollen Familie in Schwerin.
                   Schon in meiner Jugend habe ich eine Leidenschaft für die
                   kreative Arbeit mit digitalen Medien und das Programmieren
-                  entwickelt. Damals begann ich, erste Webseiten zu erstellen.
+                  entwickelt. Damals begann ich, erste Webseiten zu{" "}
+                  <span>{showText ? "erstellen." : "erstell..."}</span>{" "}
+                  <span
+                    style={{
+                      display: showText ? "none" : "inline",
+                      pointerEvents: "visible",
+                    }}
+                    className="text-color_primary cursor-pointer z-30"
+                    onClick={() => setShowText(!showText)}
+                  >
+                    mehr lesen
+                  </span>
                 </p>
               </AnimationShowElement>
               <AnimationHideBanner />
             </div>
 
-            <div>
+            <div
+              className="flex flex-col gap-4 bg-transparent"
+              style={{ display: showText ? "" : "none" }}
+            >
               <div className="relative z-30 bg-transparent overflow-hidden">
                 <AnimationShowElement>
                   <p className="bg-transparent">
