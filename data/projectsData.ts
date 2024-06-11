@@ -1,4 +1,4 @@
-const projectsData = [
+export const projectsData = [
   {
     name: "Innova Stay",
     techStack: [
@@ -69,4 +69,19 @@ const projectsData = [
   },
 ];
 
-export default projectsData;
+export const myTechStack = [
+  "Javascript",
+  "Typescript",
+  "CSS",
+  "SCSS",
+  "HTML",
+  "React",
+  "Redux",
+  "Framer Motion",
+  "Tailwind",
+  "Github",
+  "Vite",
+  "npm",
+  "Supabase",
+  "VSCode",
+];

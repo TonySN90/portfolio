@@ -7,6 +7,7 @@ import GitHubCalendar from "react-github-calendar";
 import { ThemeInput } from "react-activity-calendar";
 import { useEffect, useRef } from "react";
 import { useObserver } from "../contexts/ObserverContext";
+import { myTechStack } from "../../data/projectsData";
 
 import AnimationShowElement from "../animations/AnimationShowElement";
 import AnimationHideBanner from "../animations/AnimationHideBanner";
@@ -44,7 +45,7 @@ function About() {
       <SectionWrapper>
         <div className="relative z-30 bg-transparent overflow-hidden">
           <AnimationShowElement>
-            <Title>WerIchBin</Title>
+            <Title>Wer Ich Bin</Title>
           </AnimationShowElement>
           <AnimationHideBanner />
         </div>
@@ -64,34 +65,36 @@ function About() {
               <AnimationHideBanner />
             </div>
 
-            <div className="relative z-30 bg-transparent overflow-hidden">
-              <AnimationShowElement>
-                <p className="bg-transparent">
-                  Angefangen mit HTML, CSS und Javascript habe ich Inzwischen
-                  viele Erfahrungen in Projekten mit modernen Technologien wie
-                  React, TypeScript und Tailwind sammeln können. Ich bin stets
-                  auf der Suche nach neuen Herausforderungen und Möglichkeiten,
-                  mein Wissen zu erweitern und meine Fähigkeiten weiter zu
-                  auszubauen.
-                </p>
-              </AnimationShowElement>
-              <AnimationHideBanner />
-            </div>
+            <div>
+              <div className="relative z-30 bg-transparent overflow-hidden">
+                <AnimationShowElement>
+                  <p className="bg-transparent">
+                    Angefangen mit HTML, CSS und Javascript habe ich Inzwischen
+                    viele Erfahrungen in Projekten mit modernen Technologien wie
+                    React, TypeScript und Tailwind sammeln können. Ich bin stets
+                    auf der Suche nach neuen Herausforderungen und
+                    Möglichkeiten, mein Wissen zu erweitern und meine
+                    Fähigkeiten weiter zu auszubauen.
+                  </p>
+                </AnimationShowElement>
+                <AnimationHideBanner />
+              </div>
 
-            <div className="relative z-30 bg-transparent overflow-hidden">
-              <AnimationShowElement>
-                <p className="bg-transparent">
-                  Mein Ziel ist es, den Einstieg in Welt der Softwareentwicklung
-                  zu finden und als Frontend-Entwickler tätig zu werden, wobei
-                  ich stets danach strebe, innovative und ansprechende digitale
-                  Lösungen zu schaffen.
-                </p>
-              </AnimationShowElement>
-              <AnimationHideBanner />
+              <div className="relative z-30 bg-transparent overflow-hidden">
+                <AnimationShowElement>
+                  <p className="bg-transparent">
+                    Mein Ziel ist es, den Einstieg in Welt der
+                    Softwareentwicklung zu finden und als Frontend-Entwickler
+                    tätig zu werden, wobei ich stets danach strebe, innovative
+                    und ansprechende digitale Lösungen zu schaffen.
+                  </p>
+                </AnimationShowElement>
+                <AnimationHideBanner />
+              </div>
             </div>
           </div>
-          <div className="flex flex-col-reverse md:flex-col justify-between w-full md:w-[35%] z-30 bg-transparent">
-            <div className="bg-transparent">
+          <div className="flex flex-col-reverse lg:flex-col gap-2 justify-center w-full md:w-[60%] z-30 bg-transparent">
+            <div className="bg-transparent border-2 border-color_primary_dark p-8 rounded-xl shadow-2xl shadow-color_primary_dark">
               <div className="relative z-30 bg-transparent overflow-hidden">
                 <AnimationShowElement>
                   <SubTitle>
@@ -109,19 +112,9 @@ function About() {
               <div className="relative flex z-30 bg-transparent overflow-hidden">
                 <AnimationShowElement>
                   <div className="flex flex-wrap md:justify-between gap-2 bg-transparent">
-                    <Chip>Javascript</Chip>
-                    <Chip>Typescript</Chip>
-                    <Chip>CSS</Chip>
-                    <Chip>SCSS</Chip>
-                    <Chip>HTML</Chip>
-                    <Chip>React</Chip>
-                    <Chip>Redux</Chip>
-                    <Chip>Framer Motion</Chip>
-                    <Chip>Tailwind</Chip>
-                    <Chip>Github</Chip>
-                    <Chip>Vite</Chip>
-                    <Chip>npm</Chip>
-                    <Chip>Supabase</Chip>
+                    {myTechStack.map((tech) => (
+                      <Chip key={tech}>{tech}</Chip>
+                    ))}
                   </div>
                 </AnimationShowElement>
                 <AnimationHideBanner />
@@ -135,7 +128,7 @@ function About() {
                     ?
                   </span>
                   <img
-                    className="w-[80%] rounded-full p-4 m-auto bg-transparent blur group-hover:blur-none border-2 border-color_primary"
+                    className="w-[80%] md:w-[60%] rounded-full p-4 m-auto bg-transparent blur group-hover:blur-none border-2 border-color_primary"
                     src="avatar.jpeg"
                     alt="Avatar"
                   />

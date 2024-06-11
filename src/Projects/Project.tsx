@@ -1,10 +1,7 @@
 import AnimationHideBanner from "../animations/AnimationHideBanner";
 import AnimationShowElement from "../animations/AnimationShowElement";
-import Button from "../components/Button";
 import Chip from "../components/Chip";
 import { useObserver } from "../contexts/ObserverContext";
-import { TbBrandGithubFilled } from "react-icons/tb";
-import { RxExternalLink } from "react-icons/rx";
 import LinkButtons from "./LinkButtons";
 
 function Project({

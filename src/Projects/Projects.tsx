@@ -3,7 +3,7 @@ import SectionWrapper from "../components/SectionWrapper";
 import SubTitle from "../components/SubTitle";
 import Title from "../components/Title";
 import Project from "./Project";
-import projectsData from "./projectsData";
+import { projectsData } from "../../data/projectsData";
 import { useEffect, useRef, useState } from "react";
 import { useObserver } from "../contexts/ObserverContext";
 import ProjectModal from "./ProjectModal";
