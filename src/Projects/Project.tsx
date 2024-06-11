@@ -1,4 +1,3 @@
-import { MdRoundaboutRight } from "react-icons/md";
 import AnimationHideBanner from "../animations/AnimationHideBanner";
 import AnimationShowElement from "../animations/AnimationShowElement";
 import Button from "../components/Button";
@@ -20,6 +19,8 @@ function Project({
   techStack: string[];
   description: string;
   img: string;
+  link: string;
+  github: string;
   setCurrentProject: (project: string) => void;
 }) {
   const { openModal } = useObserver();
@@ -46,7 +47,13 @@ function Project({
               />
             </a>
           </div>
-          <div className="rounded-b-lg bg-transparent">
+          <div
+            className="rounded-b-lg bg-transparent"
+            onClick={() => {
+              setCurrentProject(name);
+              openModal();
+            }}
+          >
             <h2 className="text-2xl font-bold">
               {name} <span className="text-color_primary">.</span>
             </h2>
@@ -63,30 +70,38 @@ function Project({
                 ? description.substring(0, 200) + "..."
                 : description}
             </p>
-            <div className="flex flex-wrap justify-between items-end gap-4 mt-4">
-              <p
-                className="text-color_primary cursor-pointer"
-                onClick={() => {
-                  setCurrentProject(name);
-                  openModal();
-                }}
+          </div>
+          <div className="flex flex-wrap justify-between items-end gap-4 mt-4">
+            <p
+              className="text-color_primary cursor-pointer"
+              onClick={() => {
+                setCurrentProject(name);
+                openModal();
+              }}
+            >
+              Erfahre mehr &#62;
+            </p>
+            <div className="flex gap-2">
+              <Button
+                extras="group bg-color_primary border-2 border-color_primary hover:bg-color_background"
+                link={github}
               >
-                Erfahre mehr &#62;
-              </p>
-              <div className="flex gap-2">
-                <Button bgColor="color_primary" link={github}>
-                  <div className="bg-transparent flex items-center gap-1">
-                    <TbBrandGithubFilled className="text-color_background" />
-                    <p className="text-color_background">Code</p>
-                  </div>
-                </Button>
-                <Button bgColor="color_secondary" link={link}>
-                  <div className="bg-transparent flex items-center gap-1">
-                    <RxExternalLink />
-                    <p>Live Projekt</p>
-                  </div>
-                </Button>
-              </div>
+                <div className="bg-transparent flex items-center gap-1">
+                  <TbBrandGithubFilled className="text-color_background group-hover:text-color_primary transition-all" />
+                  <p className="text-color_background group-hover:text-color_primary transition-all">
+                    Code
+                  </p>
+                </div>
+              </Button>
+              <Button
+                extras="border-2 border-color_secondary hover:bg-color_secondary"
+                link={link}
+              >
+                <div className="bg-transparent flex items-center gap-1">
+                  <RxExternalLink />
+                  <p>Live Projekt</p>
+                </div>
+              </Button>
             </div>
           </div>
         </div>
