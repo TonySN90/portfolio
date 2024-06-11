@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { useObserver } from "../contexts/ObserverContext";
 import projectsData from "./projectsData";
 import { createPortal } from "react-dom";
-import { PiGithubLogoFill } from "react-icons/pi";
-import { RxExternalLink } from "react-icons/rx";
+import Chip from "../components/Chip";
+import LinkButtons from "./LinkButtons";
 
 function ProjectModal({ projektName }: { projektName: string }) {
   const { modalOpen, closeModal } = useObserver();
@@ -13,6 +13,7 @@ function ProjectModal({ projektName }: { projektName: string }) {
 
   return (
     modalOpen &&
+    project &&
     createPortal(
       <div className="overflow-scroll">
         {/* Overlay */}
@@ -39,34 +40,22 @@ function ProjectModal({ projektName }: { projektName: string }) {
             transition={{ duration: 0.3 }}
           >
             <div className="m-auto rounded-xl z-50">
-              <img className="rounded-t-lg" src={project?.img} alt="" />
+              <img className="rounded-t-lg" src={project.img} alt="" />
               <div className="p-4">
-                <h2 className="font-bold text-[2rem] mb-2">{project?.name}</h2>
-                <p className="text-color_primary mb-2">{project?.techStack}</p>
-                <p className="text-white mb-2">{project?.description}</p>
-                <h2 className="font-bold text-[1.3rem]">Projekt Links</h2>
-                <div className="flex gap-3">
-                  <div className="flex items-center gap-1 bg-inherit">
-                    <PiGithubLogoFill className="text-color_primary" />
-                    <a
-                      className="text-color_primary"
-                      href={project?.github}
-                      target="_blank"
-                    >
-                      Source Code
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-1 bg-inherit">
-                    <RxExternalLink className="text-color_primary" />
-                    <a
-                      className="text-color_primary"
-                      href={project?.link}
-                      target="_blank"
-                    >
-                      Live Projekt
-                    </a>
-                  </div>
+                <h2 className="font-bold text-[2rem] mb-2">{project.name}</h2>
+                <div className="flex flex-wrap gap-2 my-4">
+                  {project.techStack.map((stack) => (
+                    <Chip key={stack} inverted={true}>
+                      {stack}
+                    </Chip>
+                  ))}
                 </div>
+                <p className="text-white mb-2">{project.description}</p>
+                <h2 className="font-bold text-[1.3rem] mb-2">Projekt Links</h2>
+                <LinkButtons
+                  github={project.github}
+                  liveProject={project.link}
+                />
               </div>
             </div>
           </motion.div>

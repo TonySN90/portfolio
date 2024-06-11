@@ -5,6 +5,7 @@ import Chip from "../components/Chip";
 import { useObserver } from "../contexts/ObserverContext";
 import { TbBrandGithubFilled } from "react-icons/tb";
 import { RxExternalLink } from "react-icons/rx";
+import LinkButtons from "./LinkButtons";
 
 function Project({
   link,
@@ -48,7 +49,7 @@ function Project({
             </a>
           </div>
           <div
-            className="rounded-b-lg bg-transparent"
+            className="rounded-b-lg bg-transparent cursor-pointer"
             onClick={() => {
               setCurrentProject(name);
               openModal();
@@ -81,28 +82,7 @@ function Project({
             >
               Erfahre mehr &#62;
             </p>
-            <div className="flex gap-2">
-              <Button
-                extras="group bg-color_primary border-2 border-color_primary hover:bg-color_background"
-                link={github}
-              >
-                <div className="bg-transparent flex items-center gap-1">
-                  <TbBrandGithubFilled className="text-color_background group-hover:text-color_primary transition-all" />
-                  <p className="text-color_background group-hover:text-color_primary transition-all">
-                    Code
-                  </p>
-                </div>
-              </Button>
-              <Button
-                extras="border-2 border-color_secondary hover:bg-color_secondary"
-                link={link}
-              >
-                <div className="bg-transparent flex items-center gap-1">
-                  <RxExternalLink />
-                  <p>Live Projekt</p>
-                </div>
-              </Button>
-            </div>
+            <LinkButtons github={github} liveProject={link} />
           </div>
         </div>
       </AnimationShowElement>

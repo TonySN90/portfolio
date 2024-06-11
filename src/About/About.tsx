@@ -146,14 +146,14 @@ function About() {
           </div>
         </div>
 
-        <div className="relative z-30 bg-transparent">
+        <div className="relative z-30">
           <AnimationShowElement>
-            <div className="z-30 bg-transparent rounded-lg p-3 w-[100%] border border-color_primary_dark">
+            <div className="z-30 rounded-lg p-3 w-[100%] border border-color_primary_dark">
               <SubTitle>
                 <div className="bg-color_primary min-w-8 size-8 flex justify-center items-center rounded-full">
-                  <LuGithub className="bg-transparent text-color_background size-5" />
+                  <LuGithub className="text-color_background size-5" />
                 </div>
-                <p className="bg-transparent">Contributions</p>
+                <p>Contributions</p>
               </SubTitle>
 
               <div
