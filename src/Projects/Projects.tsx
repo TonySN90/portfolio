@@ -12,11 +12,11 @@ import AnimationHideBanner from "../animations/AnimationHideBanner";
 import { useInView } from "react-intersection-observer";
 
 function Projects() {
-  const { setInView, isMobile } = usePortfolioContext();
+  const { setInView, windowWidth } = usePortfolioContext();
   const [currentProject, setCurrentProject] = useState("");
 
   const { ref: projectStartRef, inView: projectStartView } = useInView({
-    threshold: isMobile ? 0.1 : 0.4,
+    threshold: windowWidth <= 768 ? 0.1 : 0.4,
   });
 
   useEffect(() => {

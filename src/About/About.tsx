@@ -16,51 +16,41 @@ import Chip from "../components/Chip";
 
 function About() {
   const [showText, setShowText] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const explicitTheme: ThemeInput = {
     dark: ["#0aff9d18", "#0aff9d47", "#0aff9d85", "#0aff9dba", "#0aff9d"],
   };
 
-  const { setInView } = usePortfolioContext();
+  const { setInView, windowWidth } = usePortfolioContext();
 
-  const { ref: aboutStartRef, inView: aboutStartView } = useInView({});
+  const { ref: aboutStartRef, inView: aboutStartView } = useInView({
+    threshold: 1,
+  });
   const { ref: aboutEndRef, inView: aboutEndView } = useInView({
     threshold: 1,
   });
 
   useEffect(() => {
-    aboutStartView && setInView("wer");
-    aboutEndView && setInView("wer");
-  }, [setInView, aboutStartView, aboutEndView]);
+    windowWidth < 640 ? setShowText(false) : setShowText(true);
+  }, [windowWidth]);
 
   useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    windowWidth < 640 ? setShowText(false) : setShowText(true);
-
     setTimeout(() => {
       // UseRef unfortunately not usable
-      const scrollContainer = document.querySelector(
+      const contributionsContainer = document.querySelector(
         ".styles-module_scrollContainer__-bJC8"
       );
-      if (!scrollContainer) return;
-      scrollContainer.scrollLeft =
-        scrollContainer.scrollWidth - scrollContainer.clientWidth;
+      if (!contributionsContainer) return;
+      contributionsContainer.scrollLeft =
+        contributionsContainer.scrollWidth - contributionsContainer.clientWidth;
     }, 600);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [windowWidth]);
+    aboutStartView && setInView("wer");
+    aboutEndView && setInView("wer");
+  }, [setInView, aboutStartView, aboutEndView, windowWidth]);
 
   return (
     <section
-      // ref={aboutRef}
       className="relative flex justify-center items-center py-16
     snap-start sm:text-left w-[calc(100vw-3rem)] sm:w-[calc(100vw-4rem)]"
       id="wer"

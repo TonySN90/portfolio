@@ -6,7 +6,7 @@ interface PortfolioContextType {
   modalOpen: boolean;
   openModal: () => void;
   closeModal: () => void;
-  isMobile: boolean;
+  windowWidth: number;
 }
 
 const PortfolioContext = createContext<PortfolioContextType | undefined>(
@@ -15,12 +15,12 @@ const PortfolioContext = createContext<PortfolioContextType | undefined>(
 
 function PortfolioProvider({ children }: { children: React.ReactNode }) {
   const [inView, setInView] = useState("start");
-  const [isMobile, setIsMobile] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setWindowWidth(window.innerWidth);
     };
     window.addEventListener("resize", handleResize);
     handleResize(); // Check on mount
@@ -42,7 +42,7 @@ function PortfolioProvider({ children }: { children: React.ReactNode }) {
       value={{
         inView,
         setInView,
-        isMobile,
+        windowWidth,
         modalOpen,
         openModal,
         closeModal,
@@ -57,7 +57,7 @@ const usePortfolioContext = () => {
   const context = useContext(PortfolioContext);
   if (context === undefined) {
     throw new Error(
-      "usePortfolio muss innerhalb eines Portfolio Providers verwendet werden"
+      "usePortfolio muss innerhalb des Portfolio-Providers verwendet werden"
     );
   }
   return context;
