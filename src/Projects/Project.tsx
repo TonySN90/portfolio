@@ -1,6 +1,7 @@
 import AnimationHideBanner from "../animations/AnimationHideBanner";
 import AnimationShowElement from "../animations/AnimationShowElement";
 import Chip from "../components/Chip";
+import Title from "../components/Title";
 import { usePortfolioContext } from "../contexts/PortfolioContext";
 import LinkButtons from "./LinkButtons";
 
@@ -52,9 +53,7 @@ function Project({
               openModal();
             }}
           >
-            <h2 className="text-2xl font-bold">
-              {name} <span className="text-color_primary">.</span>
-            </h2>
+            <Title size={1.5} children={name} />
 
             <div className="flex flex-wrap gap-2 my-4">
               {techStack.map((stack) => (

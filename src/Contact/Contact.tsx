@@ -98,7 +98,7 @@ function Contact() {
           </AnimationShowElement>
           <AnimationHideBanner />
         </div>
-        <div className="h-[300px]"></div>
+        <div className="h-[200px] md:h-[300px]"></div>
       </SectionWrapper>
     </section>
   );

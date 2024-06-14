@@ -14,7 +14,7 @@ export const projectsData = [
       "Innova Stay ist eine Plattform zur Verwaltung von Kurzzeitvermietungen mit Hauptfunktionen wie einem Dashboard für Buchungsübersicht und Analysen (7, 30, 90 Tage), einem grafischen Buchungskalender (3-Monats-Zeitraum), und tabellarischer Verwaltung von Buchungen, Gästen und Objekten mit Such-, Filter- und Sortierfunktionen. Neue Buchungen können über den Kalender oder die Buchungsübersicht angelegt werden. Das System bietet ein Login-System für Nutzerkonten, Hoteleinstellungen (Mindestübernachtungen, Frühstückspreise), Dark/Light Mode und ein responsives Design, wobei der Buchungskalender nicht responsiv ist.",
     github: "https://github.com/TonySN90/innovastay",
     link: "https://innova-stay.netlify.app",
-    img: "IS-Dashboard.webp",
+    img: "IS.webp",
   },
   {
     name: "React Booking Schedular",
@@ -41,7 +41,7 @@ export const projectsData = [
     img: "TT.webp",
   },
   {
-    name: "Wetter- PWA",
+    name: "Wetter App",
     techStack: ["HTML", "SCSS", "Javascript"],
     description:
       "Eine Wetter-App darf in meinem Portfolio nicht fehlen. Diese App, die im ansprechenden Design gestaltet ist, nutzt die API von OpenWeather. Sie bietet Informationen über die aktuelle Wetterlage auch stündliche und 5-Tage-Vorhersagen sowie Informationen zur Luftqualität. Favoriten und das gewählte Theme werden im localStorage gespeichert.",
@@ -53,7 +53,7 @@ export const projectsData = [
     name: "Unsere kleine Schmetterlingsfarm",
     techStack: ["HTML", "CSS", "Javascript"],
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. A quas illo animi quis similique veritatis sed, eos, natus travel. Lorem ipsum, dolor sit amet consectetur adipisicing elit. A quas illo animi quis similique veritatis sed, eos, natus travel Lorem ipsum, dolor sit amet consectetur adipisicing elit. A quas illo animi quis similique veritatis sed, eos, natus travel",
+      "Unsere kleine Schmetterlingsfarm war eine liebevoll gestaltete Website für eine Kindertageseinrichtung, die inzwischen ihre Türen geschlossen hat. Die Website diente als zentrale Informationsplattform für Eltern und bot eine Fülle an Ressourcen und Einblicken in den Alltag der Einrichtung.",
     github: "https://github.com/TonySN90",
     link: "https://schmetterlingsfarm.netlify.app/",
     img: "SF.webp",
